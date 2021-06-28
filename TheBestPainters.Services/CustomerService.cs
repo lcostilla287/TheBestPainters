@@ -58,5 +58,26 @@ namespace TheBestPainters.Services
                 return query.ToArray();
             }
         }
+
+        public CustomerDetail GetCustomerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
+                return
+                    new CustomerDetail
+                    {
+                        CustomerId = entity.CustomerId,
+                        FullName = entity.FullName,
+                        PhoneNumber = entity.PhoneNumber,
+                        StreetAddress = entity.StreetAddress,
+                        CityAddress = entity.CityAddress,
+                        Email = entity.Email
+                    };
+            }
+        }
     }
 }
