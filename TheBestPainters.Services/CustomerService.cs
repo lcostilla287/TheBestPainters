@@ -71,12 +71,33 @@ namespace TheBestPainters.Services
                     new CustomerDetail
                     {
                         CustomerId = entity.CustomerId,
-                        FullName = entity.FullName,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
                         PhoneNumber = entity.PhoneNumber,
                         StreetAddress = entity.StreetAddress,
                         CityAddress = entity.CityAddress,
                         Email = entity.Email
                     };
+            }
+        }
+
+        public bool UpdateCustomer(CustomerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.PhoneNumber = model.PhoneNumber;
+                entity.StreetAddress = model.StreetAddress;
+                entity.CityAddress = model.CityAddress;
+                entity.Email = model.Email;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

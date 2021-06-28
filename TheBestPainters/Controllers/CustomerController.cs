@@ -55,6 +55,24 @@ namespace TheBestPainters.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCustomerService();
+            var detail = service.GetCustomerById(id);
+            var model =
+                new CustomerEdit
+                {
+                    CustomerId = detail.CustomerId,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                    PhoneNumber = detail.PhoneNumber,
+                    StreetAddress = detail.StreetAddress,
+                    CityAddress = detail.CityAddress,
+                    Email = detail.Email
+                };
+            return View(model);
+        }
+
         private CustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
