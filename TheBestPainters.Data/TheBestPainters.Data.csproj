@@ -56,9 +56,14 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.Designer.cs">
       <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106281848568_JobMigration.cs" />
+    <Compile Include="Migrations\202106281848568_JobMigration.Designer.cs">
+      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106281422367_InitialCreate.resx">
       <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106281848568_JobMigration.resx">
+      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
