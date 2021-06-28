@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Models.JobModels
 {
-    public class JobCreate
+    public class JobEdit
     {
+        [Required]
+        public int JobId { get; set; }
         public int? CustomerId { get; set; }
+
         [Required]
         public string JobLocation { get; set; }
         [Required]
