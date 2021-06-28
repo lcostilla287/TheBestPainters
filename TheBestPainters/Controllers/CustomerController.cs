@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TheBestPainters.Models.CustomerModels;
+using TheBestPainters.Services;
 
 namespace TheBestPainters.Controllers
 {
@@ -13,7 +15,10 @@ namespace TheBestPainters.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var model = new CustomerListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
+            var model = service.GetCustomers();
+
             return View(model);
         }
 
@@ -27,11 +32,17 @@ namespace TheBestPainters.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
+
+            service.CreateCustomer(model);
+
+            return RedirectToAction("Index");
         }
     }
 }
