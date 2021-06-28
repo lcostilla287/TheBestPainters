@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheBestPainters.Data\TheBestPainters.Data.csproj">
+      <Project>{ca7c0d43-3f54-499a-a54f-48f996675ba2}</Project>
+      <Name>TheBestPainters.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheBestPainters.Models\TheBestPainters.Models.csproj">
+      <Project>{f0d066d0-cb5b-470a-aa19-2135fa24cd4e}</Project>
+      <Name>TheBestPainters.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
