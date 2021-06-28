@@ -73,6 +73,30 @@ namespace TheBestPainters.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CustomerEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.CustomerId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCustomerService();
+
+            if (service.UpdateCustomer(model))
+            {
+                TempData["SaveResult"] = "Your Customer was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your customer could not be updated.");
+            return View(model);
+        }
+
         private CustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
