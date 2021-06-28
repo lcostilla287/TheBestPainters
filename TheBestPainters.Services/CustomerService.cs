@@ -51,7 +51,8 @@ namespace TheBestPainters.Services
                                 new CustomerListItem
                                 {
                                     CustomerId = e.CustomerId,
-                                    FullName = e.FullName,
+                                    FirstName = e.FirstName,
+                                    LastName = e.LastName,
                                     PhoneNumber = e.PhoneNumber
                                 }
                         );
