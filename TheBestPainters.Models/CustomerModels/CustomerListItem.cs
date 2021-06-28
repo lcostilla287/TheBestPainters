@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheBestPainters.Data.Customer
+namespace TheBestPainters.Models.CustomerModels
 {
     public class CustomerListItem
     {

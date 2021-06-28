@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheBestPainters.Data.Customer
+namespace TheBestPainters.Data
 {
     public class Customer
     {

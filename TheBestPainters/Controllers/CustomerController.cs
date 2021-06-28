@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TheBestPainters.Data.Customer;
+using TheBestPainters.Models.CustomerModels;
 
 namespace TheBestPainters.Controllers
 {
@@ -14,7 +14,7 @@ namespace TheBestPainters.Controllers
         public ActionResult Index()
         {
             var model = new CustomerListItem[0];
-            return View();
+            return View(model);
         }
     }
 }
