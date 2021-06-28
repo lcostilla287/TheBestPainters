@@ -68,5 +68,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheBestPainters.Data\TheBestPainters.Data.csproj">
+      <Project>{CA7C0D43-3F54-499A-A54F-48F996675BA2}</Project>
+      <Name>TheBestPainters.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
