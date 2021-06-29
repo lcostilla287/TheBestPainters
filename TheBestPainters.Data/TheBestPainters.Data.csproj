@@ -57,6 +57,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Job.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.Designer.cs">
       <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
