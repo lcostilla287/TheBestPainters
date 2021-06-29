@@ -65,6 +65,7 @@
     <Compile Include="MaterialModels\MaterialCreate.cs" />
     <Compile Include="MaterialModels\MaterialDetail.cs" />
     <Compile Include="MaterialModels\MaterialEdit.cs" />
+    <Compile Include="MaterialModels\MaterialListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

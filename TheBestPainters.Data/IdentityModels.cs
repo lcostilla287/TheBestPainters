@@ -34,6 +34,7 @@ namespace TheBestPainters.Data
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Material> Materials { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
