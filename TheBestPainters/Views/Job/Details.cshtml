@@ -1,0 +1,82 @@
+﻿@model TheBestPainters.Models.JobModels.JobDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JobDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScopeOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScopeOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exterior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exterior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
