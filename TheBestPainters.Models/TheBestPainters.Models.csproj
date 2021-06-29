@@ -63,6 +63,7 @@
     <Compile Include="JobModels\JobEdit.cs" />
     <Compile Include="JobModels\JobListItem.cs" />
     <Compile Include="MaterialModels\MaterialCreate.cs" />
+    <Compile Include="MaterialModels\MaterialDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
