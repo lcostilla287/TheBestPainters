@@ -39,5 +39,7 @@ namespace TheBestPainters.Data
         public string CityAddress { get; set; }
 
         public string Email { get; set; }
+
+        public virtual List<Job> Jobs { get; set; } = new List<Job>();
     }
 }
