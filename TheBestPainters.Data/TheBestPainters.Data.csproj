@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202106291323377_CustomerWithJobs.Designer.cs">
       <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106291838077_Materials.cs" />
+    <Compile Include="Migrations\202106291838077_Materials.Designer.cs">
+      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291323377_CustomerWithJobs.resx">
       <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291838077_Materials.resx">
+      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

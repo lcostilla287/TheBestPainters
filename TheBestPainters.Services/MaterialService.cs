@@ -50,6 +50,7 @@ namespace TheBestPainters.Services
                             {
                                 MaterialId = e.MaterialId,
                                 JobId = e.JobId,
+                                MaterialName = e.MaterialName,
                                 Quantity = e.Quantity
                             }
                         );
