@@ -73,7 +73,8 @@ namespace TheBestPainters.Services
                     {
                         JobId = entity.JobId,
                         CustomerId = entity.CustomerId,
-                        FullName = entity.Customer.FullName,
+                        //FullName = entity.Customer.FullName,
+                        ScopeOfWork = entity.ScopeOfWork,
                         JobLocation = entity.JobLocation,
                         Interior = entity.Interior,
                         Exterior = entity.Exterior,

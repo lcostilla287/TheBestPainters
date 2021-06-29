@@ -11,7 +11,7 @@ namespace TheBestPainters.Models.JobModels
         public int JobId { get; set; }
 
         public int? CustomerId { get; set; }
-        public string FullName { get; set; }
+        //public string FullName { get; set; }
 
         public string JobLocation { get; set; }
         public string ScopeOfWork { get; set; }

@@ -88,7 +88,7 @@ namespace TheBestPainters.Controllers
 
             if (service.UpdateJob(model))
             {
-                TempData["SaveResult"] = "Your Customer was updated.";
+                TempData["SaveResult"] = "Your job was updated.";
                 return RedirectToAction("Index");
             }
 
@@ -114,7 +114,7 @@ namespace TheBestPainters.Controllers
 
             service.DeleteJob(id);
 
-            TempData["SaveResult"] = "The was deleted";
+            TempData["SaveResult"] = "The job was deleted";
 
             return RedirectToAction("Index");
         }
