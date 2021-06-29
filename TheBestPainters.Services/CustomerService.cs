@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
+using TheBestPainters.Models.JobModels;
 
 namespace TheBestPainters.Services
 {
@@ -77,7 +78,14 @@ namespace TheBestPainters.Services
                         PhoneNumber = entity.PhoneNumber,
                         StreetAddress = entity.StreetAddress,
                         CityAddress = entity.CityAddress,
-                        Email = entity.Email
+                        Email = entity.Email,
+
+                        Jobs = entity.Jobs
+                        .Select(e => new JobListItem()
+                        {
+                            JobId = e.JobId,
+                            JobLocation = e.JobLocation,
+                        }).ToList()
                     };
             }
         }
