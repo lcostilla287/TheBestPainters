@@ -57,6 +57,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Job.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.Designer.cs">
       <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
@@ -68,6 +69,10 @@
     <Compile Include="Migrations\202106291323377_CustomerWithJobs.cs" />
     <Compile Include="Migrations\202106291323377_CustomerWithJobs.Designer.cs">
       <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291838077_Materials.cs" />
+    <Compile Include="Migrations\202106291838077_Materials.Designer.cs">
+      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291323377_CustomerWithJobs.resx">
       <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291838077_Materials.resx">
+      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -31,5 +31,7 @@ namespace TheBestPainters.Data
         public bool Exterior { get; set; }
         [Required]
         public double Price { get; set; }
+
+        public virtual List<Material> Materials { get; set; } = new List<Material>();
     }
 }
