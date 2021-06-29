@@ -91,6 +91,29 @@ namespace TheBestPainters.Controllers
             ModelState.AddModelError("", "The Material could not be updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateMaterialService();
+            var model = svc.GetMaterialById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteMaterial(int id)
+        {
+            var service = CreateMaterialService();
+
+            service.DeleteMaterial(id);
+
+            TempData["SaveResult"] = "The Material was deleted";
+
+            return RedirectToAction("Index");
+        }
         private MaterialService CreateMaterialService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
