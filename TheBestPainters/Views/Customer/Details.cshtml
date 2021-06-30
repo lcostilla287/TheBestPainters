@@ -67,9 +67,31 @@
         </dd>
 
     </dl>
-    <hr/>
+    <hr />
+    @foreach (var item in Model.Jobs)
+    {
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(modelItem => item.JobId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(modelItem => item.JobId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(modelItem => item.JobLocation)
+            </dt>
+            <dd>
+                @Html.DisplayFor(modelItem => item.JobLocation)
+            </dd>
+        </dl>
+        <p>
+            @Html.ActionLink("View Job Details", "Details", "Job", new {id = item.JobId }, null)
+        </p>
+    }
 </div>
+<hr/>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.CustomerId  }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

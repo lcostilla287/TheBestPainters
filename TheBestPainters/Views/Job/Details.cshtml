@@ -67,8 +67,37 @@
         </dd>
 
     </dl>
+    <hr/>
+    @foreach (var item in Model.Materials)
+            {
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.MaterialId)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.MaterialId)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.MaterialName)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.MaterialName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.Quantity)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </dd>
+                </dl>
+                <p>
+                    @Html.ActionLink("View Material Details", "Details", "Material", new {id = item.MaterialId}, null)
+                </p>
+            }
 </div>
+<hr/>
 <p>
+    <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
     @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
