@@ -62,6 +62,10 @@
     <Compile Include="CustomerModels\CustomerDetail.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="EmployeeModels\EmployeeCreate.cs" />
+    <Compile Include="EmployeeModels\EmployeeDetail.cs" />
+    <Compile Include="EmployeeModels\EmployeeEdit.cs" />
+    <Compile Include="EmployeeModels\EmployeeListItem.cs" />
     <Compile Include="JobModels\JobCreate.cs" />
     <Compile Include="JobModels\JobDetail.cs" />
     <Compile Include="JobModels\JobEdit.cs" />
