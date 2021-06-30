@@ -12,6 +12,8 @@ namespace TheBestPainters.Data
         [Key]
         public int CrewId { get; set; }
         [Required]
+        public Guid OwnerId { get; set; }
+        [Required]
         public string CrewName { get; set; }
         public virtual List<Job> Jobs { get; set; } = new List<Job>();
     }
