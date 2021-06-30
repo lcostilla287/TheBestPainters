@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.JobModels;
+using TheBestPainters.Models.MaterialModels;
 
 namespace TheBestPainters.Services
 {
@@ -73,12 +74,18 @@ namespace TheBestPainters.Services
                     {
                         JobId = entity.JobId,
                         CustomerId = entity.CustomerId,
-                        //FullName = entity.Customer.FullName,
                         ScopeOfWork = entity.ScopeOfWork,
                         JobLocation = entity.JobLocation,
                         Interior = entity.Interior,
                         Exterior = entity.Exterior,
-                        Price = entity.Price
+                        Price = entity.Price,
+                        Materials = entity.Materials
+                        .Select(e => new MaterialListItem()
+                        {
+                            MaterialId = e.MaterialId,
+                            MaterialName = e.MaterialName,
+                            Quantity = e.Quantity
+                        }).ToList()
                     };
             }
         }
