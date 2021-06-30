@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.EmployeeModels;
 using TheBestPainters.Models.JobModels;
 
 namespace TheBestPainters.Models.CrewModels
@@ -12,5 +13,6 @@ namespace TheBestPainters.Models.CrewModels
         public int CrewId { get; set; }
         public string CrewName { get; set; }
         public virtual List<JobListItem> Jobs { get; set; }
+        public virtual List<EmployeeListItem> Employees { get; set; }
     }
 }
