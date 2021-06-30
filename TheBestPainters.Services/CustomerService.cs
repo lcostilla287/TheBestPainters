@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,8 +120,13 @@ namespace TheBestPainters.Services
                         .Customers
                         .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
 
-                ctx.Customers.Remove(entity);
+                foreach (var job in entity.Jobs)
+                {
+                    job.CustomerId = null;
+                }
 
+                ctx.Customers.Remove(entity);
+                
                 return ctx.SaveChanges() == 1;
             }
         }
