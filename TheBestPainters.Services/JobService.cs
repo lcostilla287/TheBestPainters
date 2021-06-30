@@ -119,6 +119,11 @@ namespace TheBestPainters.Services
                         .Jobs
                         .Single(e => e.JobId == jobId && e.OwnerId == _userId);
 
+                foreach(var material in entity.Materials)
+                {
+                    material.JobId = null;
+                }
+
                 ctx.Jobs.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
