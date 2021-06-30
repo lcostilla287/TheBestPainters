@@ -21,6 +21,10 @@ namespace TheBestPainters.Data
         public int? CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
+        [ForeignKey(nameof(Crew))]
+        public int? CrewId { get; set; }
+        public virtual Crew Crew { get; set; }
+
         [Required]
         public string JobLocation { get; set; }
         [Required]

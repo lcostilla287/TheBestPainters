@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TheBestPainters.Models.CrewModels.CrewListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CrewId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CrewName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CrewId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CrewName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.CrewId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CrewId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CrewId })
+        </td>
+    </tr>
+}
+
+</table>
