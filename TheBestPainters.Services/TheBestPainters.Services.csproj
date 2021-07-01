@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrewService.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="JobService.cs" />
@@ -75,5 +77,6 @@
       <Name>TheBestPainters.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

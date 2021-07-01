@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
 using TheBestPainters.Models.JobModels;
+using TheBestPainters.Services.CustomerResponsibilities;
 
 namespace TheBestPainters.Services
 {
@@ -21,17 +22,8 @@ namespace TheBestPainters.Services
 
         public bool CreateCustomer(CustomerCreate model)
         {
-            var entity =
-                new Customer()
-                {
-                    OwnerId = _userId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    PhoneNumber = model.PhoneNumber,
-                    StreetAddress = model.StreetAddress,
-                    CityAddress = model.CityAddress,
-                    Email = model.Email
-                };
+            Customer entity = CustomerDataCapture.Capture(model, _userId);
+
 
             using (var ctx = new ApplicationDbContext())
             {
