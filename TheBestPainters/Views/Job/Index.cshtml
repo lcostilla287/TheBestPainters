@@ -28,6 +28,9 @@
             @Html.DisplayNameFor(model => model.CustomerId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CrewId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.JobLocation)
         </th>
         <th>
@@ -49,6 +52,9 @@
                 @Html.DisplayFor(modelItem => item.CustomerId)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.CrewId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.JobLocation)
             </td>
             <td>
@@ -58,9 +64,9 @@
                 @Html.DisplayFor(modelItem => item.Exterior)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.JobId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.JobId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.JobId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.JobId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.JobId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.JobId })
             </td>
         </tr>
     }

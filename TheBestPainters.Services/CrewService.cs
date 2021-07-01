@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CrewModels;
+using TheBestPainters.Models.EmployeeModels;
 using TheBestPainters.Models.JobModels;
 
 namespace TheBestPainters.Services
@@ -73,7 +74,15 @@ namespace TheBestPainters.Services
                         {
                             JobId = e.JobId,
                             JobLocation = e.JobLocation
+                        }).ToList(),
+                        Employees = entity.Employees
+                        .Select(e => new EmployeeListItem()
+                        {
+                            EmployeeId = e.EmployeeId,
+                            FirstName = e.FirstName,
+                            LastName = e.LastName
                         }).ToList()
+                        
                     };
             }
         }
@@ -101,6 +110,15 @@ namespace TheBestPainters.Services
                     ctx
                         .Crews
                         .Single(e => e.CrewId == crewId && e.OwnerId == _userId);
+
+                foreach(var employee in entity.Employees)
+                {
+                    employee.CrewId = null;
+                }
+                foreach(var job in entity.Jobs)
+                {
+                    job.CrewId = null;
+                }
 
                 ctx.Crews.Remove(entity);
 

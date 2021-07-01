@@ -28,7 +28,9 @@ namespace TheBestPainters.Services
                     ScopeOfWork = model.ScopeOfWork,
                     Interior = model.Interior,
                     Exterior = model.Exterior,
-                    CustomerId = model.CustomerId
+                    CustomerId = model.CustomerId,
+                    Price = model.Price,
+                    CrewId = model.CrewId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -52,6 +54,7 @@ namespace TheBestPainters.Services
                             {
                                 JobId = e.JobId,
                                 CustomerId = e.CustomerId,
+                                CrewId = e.CrewId,
                                 JobLocation = e.JobLocation,
                                 Interior = e.Interior,
                                 Exterior = e.Exterior
@@ -74,6 +77,7 @@ namespace TheBestPainters.Services
                     {
                         JobId = entity.JobId,
                         CustomerId = entity.CustomerId,
+                        CrewId = entity.CrewId,
                         ScopeOfWork = entity.ScopeOfWork,
                         JobLocation = entity.JobLocation,
                         Interior = entity.Interior,
@@ -101,6 +105,7 @@ namespace TheBestPainters.Services
 
                 entity.JobLocation = model.JobLocation;
                 entity.CustomerId = model.CustomerId;
+                entity.CrewId = model.CrewId;
                 entity.ScopeOfWork = model.ScopeOfWork;
                 entity.Interior = model.Interior;
                 entity.Exterior = model.Exterior;

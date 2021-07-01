@@ -27,6 +27,15 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.CrewId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CrewId)
+            @Html.ActionLink("View Crew Details", "Details", "Crew", new {id = Model.CrewId}, null)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.JobLocation)
         </dt>
 

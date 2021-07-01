@@ -63,6 +63,7 @@ namespace TheBestPainters.Controllers
                 {
                     JobId = detail.JobId,
                     CustomerId = detail.CustomerId,
+                    CrewId = detail.CrewId,
                     JobLocation = detail.JobLocation,
                     ScopeOfWork = detail.ScopeOfWork,
                     Interior = detail.Interior,
