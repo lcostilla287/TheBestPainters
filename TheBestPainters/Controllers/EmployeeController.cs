@@ -35,10 +35,10 @@ namespace TheBestPainters.Controllers
             if (service.CreateEmployee(model))
             {
                 TempData["SaveResult"] = "The Employee was created.";
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Crew could not be created");
+            ModelState.AddModelError("", "Employee could not be created");
 
             return View(model);
         }
