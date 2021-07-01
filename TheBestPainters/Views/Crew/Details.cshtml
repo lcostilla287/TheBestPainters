@@ -27,8 +27,29 @@
         </dd>
 
     </dl>
+    @foreach (var item in Model.Jobs)
+            {
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.JobId)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.JobId)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => item.JobLocation) 
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.JobLocation)
+                    </dd>
+                </dl>
+                <p>
+                    @Html.ActionLink("View Job Details", "Details", "Job", new {id = item.JobId}, null)
+                </p>
+            }
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CrewId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
