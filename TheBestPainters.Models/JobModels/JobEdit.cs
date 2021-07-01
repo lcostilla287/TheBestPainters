@@ -12,6 +12,7 @@ namespace TheBestPainters.Models.JobModels
         [Required]
         public int JobId { get; set; }
         public int? CustomerId { get; set; }
+        public int? CrewId { get; set; }
 
         [Required]
         public string JobLocation { get; set; }
