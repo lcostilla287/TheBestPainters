@@ -115,6 +115,10 @@ namespace TheBestPainters.Services
                 {
                     employee.CrewId = null;
                 }
+                foreach(var job in entity.Jobs)
+                {
+                    job.CrewId = null;
+                }
 
                 ctx.Crews.Remove(entity);
 
