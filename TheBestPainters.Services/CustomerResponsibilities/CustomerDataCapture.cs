@@ -10,12 +10,12 @@ namespace TheBestPainters.Services.CustomerResponsibilities
 {
     public class CustomerDataCapture
     {
-        public static Customer Capture(CustomerCreate model, Guid userId)
+        public static Customer Capture(CustomerCreate model, Guid _userId)
         {
             var entity =
                 new Customer()
                 {
-                OwnerId = userId,
+                OwnerId = _userId,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.MaterialModels;
+using TheBestPainters.Services.MaterialResponsibilities;
 
 namespace TheBestPainters.Services
 {
@@ -19,15 +20,7 @@ namespace TheBestPainters.Services
 
         public bool CreateMaterial(MaterialCreate model)
         {
-            var entity =
-                new Material()
-                {
-                    OwnerId = _userId,
-                    MaterialName = model.MaterialName,
-                    Price = model.Price,
-                    Quantity = model.Quantity,
-                    JobId = model.JobId
-                };
+            var entity = MaterialDataCapture.Capture(model, _userId);
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -40,20 +33,8 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                    .Materials
-                    .Where(e => e.OwnerId == _userId)
-                    .Select(
-                        e =>
-                            new MaterialListItem
-                            {
-                                MaterialId = e.MaterialId,
-                                JobId = e.JobId,
-                                MaterialName = e.MaterialName,
-                                Quantity = e.Quantity
-                            }
-                        );
+                var query = MaterialQuery.Query(ctx, _userId);
+                    
                 return query.ToArray();
             }
         }
@@ -62,20 +43,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Materials
-                        .Single(e => e.MaterialId == id && e.OwnerId == _userId);
-                return
-                    new MaterialDetail
-                    {
-                        MaterialId = entity.MaterialId,
-                        JobId = entity.JobId,
-                        MaterialName = entity.MaterialName,
-                        Price = entity.Price,
-                        Quantity = entity.Quantity,
-                        TotalPrice = entity.TotalPrice
-                    };
+                var entity = FindMaterial.GetMaterial(ctx, id, _userId);
+
+                return ReturnMaterialData.MaterialData(entity);
             }
         }
 
@@ -83,16 +53,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Materials
-                        .Single(e => e.MaterialId == model.MaterialId && e.OwnerId == _userId);
+                var entity = FindMaterial.GetMaterial(ctx, model.MaterialId, _userId);
 
-                entity.MaterialName = model.MaterialName;
-                entity.JobId = model.JobId;
-                entity.Price = model.Price;
-                entity.Quantity = model.Quantity;
-
+                MaterialUpdate.Update(model, entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -101,10 +64,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Materials
-                        .Single(e => e.MaterialId == materialId && e.OwnerId == _userId);
+                var entity = FindMaterial.GetMaterial(ctx, materialId, _userId);
 
                 ctx.Materials.Remove(entity);
 

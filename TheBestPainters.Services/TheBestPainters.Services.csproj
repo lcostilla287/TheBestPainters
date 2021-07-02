@@ -70,6 +70,11 @@
     <Compile Include="JobResponsibilities\NullMaterials.cs" />
     <Compile Include="JobResponsibilities\ReturnJobData.cs" />
     <Compile Include="JobService.cs" />
+    <Compile Include="MaterialResponsibilities\FindMaterial.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialDataCapture.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialQuery.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialUpdate.cs" />
+    <Compile Include="MaterialResponsibilities\ReturnMaterialData.cs" />
     <Compile Include="MaterialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,8 +92,6 @@
       <Name>TheBestPainters.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MaterialResponsibilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
