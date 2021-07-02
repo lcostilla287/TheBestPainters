@@ -12,7 +12,6 @@ namespace TheBestPainters.Services.CustomerResponsibilities
     {
         public static void Update(CustomerEdit model, Customer entity)
         {
-
             entity.FirstName = model.FirstName;
             entity.LastName = model.LastName;
             entity.PhoneNumber = model.PhoneNumber;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
@@ -65,10 +64,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindCustomer.GetCustomer(ctx, customerId, _userId);
 
-                foreach (var job in entity.Jobs)
-                {
-                    job.CustomerId = null;
-                }
+                NullJobs.Nullify(entity);
 
                 ctx.Customers.Remove(entity);
                 return ctx.SaveChanges() == 1;

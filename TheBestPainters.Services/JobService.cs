@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.JobModels;
-using TheBestPainters.Models.MaterialModels;
+using TheBestPainters.Services.JobResponsibilities;
 
 namespace TheBestPainters.Services
 {
@@ -20,18 +18,7 @@ namespace TheBestPainters.Services
 
         public bool CreateJob(JobCreate model)
         {
-            var entity =
-                new Job()
-                {
-                    OwnerId = _userId,
-                    JobLocation = model.JobLocation,
-                    ScopeOfWork = model.ScopeOfWork,
-                    Interior = model.Interior,
-                    Exterior = model.Exterior,
-                    CustomerId = model.CustomerId,
-                    Price = model.Price,
-                    CrewId = model.CrewId
-                };
+            var entity = JobDataCapture.Capture(model, _userId);
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,22 +31,8 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                    .Jobs
-                    .Where(e => e.OwnerId == _userId)
-                    .Select(
-                        e =>
-                            new JobListItem
-                            {
-                                JobId = e.JobId,
-                                CustomerId = e.CustomerId,
-                                CrewId = e.CrewId,
-                                JobLocation = e.JobLocation,
-                                Interior = e.Interior,
-                                Exterior = e.Exterior
-                            }
-                        );
+                var query = JobQuery.Query(ctx, _userId);
+
                 return query.ToArray();
             }
         }
@@ -68,29 +41,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Jobs
-                        .Single(e => e.JobId == id && e.OwnerId == _userId);
-                return
-                    new JobDetail
-                    {
-                        JobId = entity.JobId,
-                        CustomerId = entity.CustomerId,
-                        CrewId = entity.CrewId,
-                        ScopeOfWork = entity.ScopeOfWork,
-                        JobLocation = entity.JobLocation,
-                        Interior = entity.Interior,
-                        Exterior = entity.Exterior,
-                        Price = entity.Price,
-                        Materials = entity.Materials
-                        .Select(e => new MaterialListItem()
-                        {
-                            MaterialId = e.MaterialId,
-                            MaterialName = e.MaterialName,
-                            Quantity = e.Quantity
-                        }).ToList()
-                    };
+                var entity = FindJob.GetJob(ctx, id, _userId);
+
+                return ReturnJobData.JobData(entity);
             }
         }
 
@@ -98,18 +51,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Jobs
-                        .Single(e => e.JobId == model.JobId && e.OwnerId == _userId);
-
-                entity.JobLocation = model.JobLocation;
-                entity.CustomerId = model.CustomerId;
-                entity.CrewId = model.CrewId;
-                entity.ScopeOfWork = model.ScopeOfWork;
-                entity.Interior = model.Interior;
-                entity.Exterior = model.Exterior;
-                entity.Price = model.Price;
+                var entity = FindJob.GetJob(ctx, model.JobId, _userId);
 
                 return ctx.SaveChanges() == 1;
             }
@@ -119,18 +61,11 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Jobs
-                        .Single(e => e.JobId == jobId && e.OwnerId == _userId);
+                var entity = FindJob.GetJob(ctx, jobId, _userId);
 
-                foreach(var material in entity.Materials)
-                {
-                    material.JobId = null;
-                }
+                NullMaterials.Nullify(entity);
 
                 ctx.Jobs.Remove(entity);
-
                 return ctx.SaveChanges() == 1;
             }
         }

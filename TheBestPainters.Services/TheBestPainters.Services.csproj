@@ -58,10 +58,17 @@
     <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
     <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
     <Compile Include="CustomerResponsibilities\FindCustomer.cs" />
+    <Compile Include="CustomerResponsibilities\NullJobs.cs" />
     <Compile Include="CustomerResponsibilities\ReturnCustomerData.cs" />
     <Compile Include="CustomerResponsibilities\CustomerUpdate.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="JobResponsibilities\FindJob.cs" />
+    <Compile Include="JobResponsibilities\JobDataCapture.cs" />
+    <Compile Include="JobResponsibilities\JobQuery.cs" />
+    <Compile Include="JobResponsibilities\JobUpdate.cs" />
+    <Compile Include="JobResponsibilities\NullMaterials.cs" />
+    <Compile Include="JobResponsibilities\ReturnJobData.cs" />
     <Compile Include="JobService.cs" />
     <Compile Include="MaterialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +87,8 @@
       <Name>TheBestPainters.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MaterialResponsibilities\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
