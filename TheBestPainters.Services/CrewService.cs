@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CrewModels;
-using TheBestPainters.Models.EmployeeModels;
-using TheBestPainters.Models.JobModels;
 using TheBestPainters.Services.CrewResponsibilities;
 
 namespace TheBestPainters.Services
