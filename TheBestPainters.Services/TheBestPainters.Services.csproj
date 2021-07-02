@@ -57,6 +57,9 @@
     <Compile Include="CrewService.cs" />
     <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
     <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
+    <Compile Include="CustomerResponsibilities\FindCustomer.cs" />
+    <Compile Include="CustomerResponsibilities\ReturnCustomerData.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerUpdate.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="JobService.cs" />

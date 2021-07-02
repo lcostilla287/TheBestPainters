@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
-using TheBestPainters.Models.JobModels;
 using TheBestPainters.Services.CustomerResponsibilities;
 
 namespace TheBestPainters.Services
@@ -24,7 +21,6 @@ namespace TheBestPainters.Services
         {
             Customer entity = CustomerDataCapture.Capture(model, _userId);
 
-
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Customers.Add(entity);
@@ -36,20 +32,8 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                        .Customers
-                        .Where(e => e.OwnerId == _userId)
-                        .Select(
-                            e =>
-                                new CustomerListItem
-                                {
-                                    CustomerId = e.CustomerId,
-                                    FirstName = e.FirstName,
-                                    LastName = e.LastName,
-                                    PhoneNumber = e.PhoneNumber
-                                }
-                        );
+                var query = CustomerQuery.Query(ctx, _userId);
+
                 return query.ToArray();
             }
         }
@@ -58,28 +42,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Customers
-                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
-                return
-                    new CustomerDetail
-                    {
-                        CustomerId = entity.CustomerId,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
-                        PhoneNumber = entity.PhoneNumber,
-                        StreetAddress = entity.StreetAddress,
-                        CityAddress = entity.CityAddress,
-                        Email = entity.Email,
-
-                        Jobs = entity.Jobs
-                        .Select(e => new JobListItem()
-                        {
-                            JobId = e.JobId,
-                            JobLocation = e.JobLocation,
-                        }).ToList()
-                    };
+                var entity = FindCustomer.GetCustomer(ctx, id, _userId);
+                
+                return ReturnCustomerData.CustomerData(entity);
             }
         }
 
@@ -87,18 +52,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Customers
-                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+                var entity = FindCustomer.GetCustomer(ctx, model.CustomerId, _userId);
 
-                entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
-                entity.PhoneNumber = model.PhoneNumber;
-                entity.StreetAddress = model.StreetAddress;
-                entity.CityAddress = model.CityAddress;
-                entity.Email = model.Email;
-
+                CustomerUpdate.Update(model, entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -107,10 +63,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Customers
-                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
+                var entity = FindCustomer.GetCustomer(ctx, customerId, _userId);
 
                 foreach (var job in entity.Jobs)
                 {
@@ -118,7 +71,6 @@ namespace TheBestPainters.Services
                 }
 
                 ctx.Customers.Remove(entity);
-                
                 return ctx.SaveChanges() == 1;
             }
         }
