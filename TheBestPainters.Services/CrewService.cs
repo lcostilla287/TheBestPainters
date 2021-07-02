@@ -7,6 +7,7 @@ using TheBestPainters.Data;
 using TheBestPainters.Models.CrewModels;
 using TheBestPainters.Models.EmployeeModels;
 using TheBestPainters.Models.JobModels;
+using TheBestPainters.Services.CrewResponsibilities;
 
 namespace TheBestPainters.Services
 {
@@ -21,12 +22,7 @@ namespace TheBestPainters.Services
 
         public bool CreateCrew(CrewCreate model)
         {
-            var entity =
-                new Crew()
-                {
-                    OwnerId = _userId,
-                    CrewName = model.CrewName
-                };
+            var entity = CrewDataCapture.Capture(model, _userId);
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -39,18 +35,8 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                    .Crews
-                    .Where(e => e.OwnerId == _userId)
-                    .Select(
-                        e =>
-                            new CrewListItem
-                            {
-                                CrewId = e.CrewId,
-                                CrewName = e.CrewName
-                            }
-                        );
+                var query = CrewQuery.Query(ctx, _userId);
+                    
                 return query.ToArray();
             }
         }
@@ -59,31 +45,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Crews
-                        .Single(e => e.CrewId == id && e.OwnerId == _userId);
+                var entity = FindCrew.GetCrew(ctx, id, _userId);
 
-                return
-                    new CrewDetail
-                    {
-                        CrewId = entity.CrewId,
-                        CrewName = entity.CrewName,
-                        Jobs = entity.Jobs
-                        .Select(e => new JobListItem()
-                        {
-                            JobId = e.JobId,
-                            JobLocation = e.JobLocation
-                        }).ToList(),
-                        Employees = entity.Employees
-                        .Select(e => new EmployeeListItem()
-                        {
-                            EmployeeId = e.EmployeeId,
-                            FirstName = e.FirstName,
-                            LastName = e.LastName
-                        }).ToList()
-                        
-                    };
+                return ReturnCrewData.CrewData(entity);
             }
         }
 
@@ -91,13 +55,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Crews
-                        .Single(e => e.CrewId == model.CrewId && e.OwnerId == _userId);
-
-                entity.CrewName = model.CrewName;
-
+                var entity = FindCrew.GetCrew(ctx, model.CrewId, _userId);
+                    
+                CrewUpdate.Update(model, entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -106,22 +66,12 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Crews
-                        .Single(e => e.CrewId == crewId && e.OwnerId == _userId);
-
-                foreach(var employee in entity.Employees)
-                {
-                    employee.CrewId = null;
-                }
-                foreach(var job in entity.Jobs)
-                {
-                    job.CrewId = null;
-                }
+                var entity = FindCrew.GetCrew(ctx, crewId, _userId);
+                   
+                NullEmployees.Nullify(entity);
+                NullJobs.NullId(entity);
 
                 ctx.Crews.Remove(entity);
-
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -54,6 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewResponsibilities\CrewDataCapture.cs" />
+    <Compile Include="CrewResponsibilities\CrewQuery.cs" />
+    <Compile Include="CrewResponsibilities\CrewUpdate.cs" />
+    <Compile Include="CrewResponsibilities\FindCrew.cs" />
+    <Compile Include="CrewResponsibilities\NullEmployees.cs" />
+    <Compile Include="CrewResponsibilities\NullJobs.cs" />
+    <Compile Include="CrewResponsibilities\ReturnCrewData.cs" />
     <Compile Include="CrewService.cs" />
     <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
     <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
