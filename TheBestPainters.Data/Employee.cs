@@ -12,6 +12,7 @@ namespace TheBestPainters.Data
     public class Employee : IEmployee
     {
         [Key]
+        [Display(Name = "EmployeeId")]
         public int Id { get; set; }
         [Required]
         public Guid OwnerId { get; set; }

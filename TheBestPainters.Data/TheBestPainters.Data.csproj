@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\ICrew.cs" />
     <Compile Include="Interfaces\ICustomer.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IIdentification.cs" />
     <Compile Include="Interfaces\IJob.cs" />
     <Compile Include="Interfaces\IMaterial.cs" />
     <Compile Include="Interfaces\IPerson.cs" />

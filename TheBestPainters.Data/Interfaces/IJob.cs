@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data.Interfaces
 {
-    public interface IJob
+    public interface IJob : IIdentification
     {
         int JobId { get; set; }
-
-        Guid OwnerId { get; set; }
 
         int? Id { get; set; }
         Customer Customer { get; set; }

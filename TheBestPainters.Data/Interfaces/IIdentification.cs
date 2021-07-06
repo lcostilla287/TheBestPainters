@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data.Interfaces
 {
-    public interface ICrew : IIdentification
+    public interface IIdentification
     {
-        string CrewName { get; set; }
-        List<Job> Jobs { get; set; }
-        List<Employee> Employees { get; set; }
+        Guid OwnerId { get; set; }
     }
 }

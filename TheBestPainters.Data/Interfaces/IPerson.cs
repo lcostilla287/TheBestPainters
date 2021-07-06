@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public interface IPerson
+    public interface IPerson : IIdentification
     {
         int Id { get; set; }
-
-        Guid OwnerId { get; set; }
 
         string FirstName { get; set; }
 

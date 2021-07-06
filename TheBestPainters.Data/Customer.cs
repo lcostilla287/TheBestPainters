@@ -11,6 +11,7 @@ namespace TheBestPainters.Data
     public class Customer : ICustomer
     {
         [Key]
+        [Display(Name = "CustomerId")]
         public int Id { get; set; }
 
         [Required]
