@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheBestPainters.Controllers.CrewResponsibilities;
 using TheBestPainters.Models.CrewModels;
 using TheBestPainters.Services;
 
@@ -56,12 +57,8 @@ namespace TheBestPainters.Controllers
         {
             var service = CreateCrewService();
             var detail = service.GetCrewById(id);
-            var model =
-                new CrewEdit
-                {
-                    CrewId = detail.CrewId,
-                    CrewName = detail.CrewName
-                };
+
+            var model = EditCrew.EditView(detail);
             return View(model);
         }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheBestPainters.Controllers.CustomerResponsibilities;
 using TheBestPainters.Models.CustomerModels;
 using TheBestPainters.Services;
 
@@ -15,8 +16,7 @@ namespace TheBestPainters.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(userId);
+            var service = CreateCustomerService();
             var model = service.GetCustomers();
 
             return View(model);
@@ -59,17 +59,8 @@ namespace TheBestPainters.Controllers
         {
             var service = CreateCustomerService();
             var detail = service.GetCustomerById(id);
-            var model =
-                new CustomerEdit
-                {
-                    CustomerId = detail.CustomerId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
-                    PhoneNumber = detail.PhoneNumber,
-                    StreetAddress = detail.StreetAddress,
-                    CityAddress = detail.CityAddress,
-                    Email = detail.Email
-                };
+
+            var model = Edit_Customer.EditView(detail);
             return View(model);
         }
 
@@ -112,7 +103,6 @@ namespace TheBestPainters.Controllers
         public ActionResult DeletePost(int id)
         {
             var service = CreateCustomerService();
-
             service.DeleteCustomer(id);
 
             TempData["SaveResult"] = "Your customer was deleted";

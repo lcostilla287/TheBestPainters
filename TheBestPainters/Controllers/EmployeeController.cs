@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheBestPainters.Controllers.EmployeeResponsibilities;
 using TheBestPainters.Models.EmployeeModels;
 using TheBestPainters.Services;
 
@@ -55,19 +56,8 @@ namespace TheBestPainters.Controllers
         {
             var service = CreateEmployeeService();
             var detail = service.GetEmployeeById(id);
-            var model =
-                new EmployeeEdit
-                {
-                    EmployeeId = detail.EmployeeId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
-                    CrewId = detail.CrewId,
-                    IsCrewChief = detail.IsCrewChief,
-                    StreetAddress = detail.StreetAddress,
-                    CityAddress = detail.CityAddress,
-                    PhoneNumber = detail.PhoneNumber,
-                    Email = detail.Email
-                };
+
+            var model = EditEmployee.EditView(detail);
             return View(model);
         }
 
