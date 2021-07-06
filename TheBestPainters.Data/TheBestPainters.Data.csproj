@@ -57,10 +57,11 @@
     <Compile Include="Crew.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="ICustomer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="IEmployee.cs" />
-    <Compile Include="IPerson.cs" />
+    <Compile Include="Interfaces\ICustomer.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IJob.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
