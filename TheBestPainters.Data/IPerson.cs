@@ -16,7 +16,7 @@ namespace TheBestPainters.Data
 
         string LastName { get; set; }
 
-        string FullName { get; set; }
+        string FullName { get;}
 
         string PhoneNumber { get; set; }
 

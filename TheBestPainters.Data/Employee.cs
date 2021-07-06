@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data
 {
-    public class Employee
+    public class Employee : IEmployee
     {
         [Key]
-        public int EmployeeId { get; set; }
+        public int Id { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         [ForeignKey(nameof(Crew))]
@@ -38,5 +38,7 @@ namespace TheBestPainters.Data
 
         public string Email { get; set; }
         public bool IsCrewChief { get; set; }
+
+        public DateTimeOffset DateHired { get; set; }
     }
 }

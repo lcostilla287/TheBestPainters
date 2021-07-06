@@ -59,6 +59,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="ICustomer.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="IEmployee.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Material.cs" />
