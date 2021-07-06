@@ -58,14 +58,24 @@
     <Compile Include="CrewModels\CrewDetail.cs" />
     <Compile Include="CrewModels\CrewEdit.cs" />
     <Compile Include="CrewModels\CrewListItem.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerCreate.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerDetail.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerEdit.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerListItem.cs" />
     <Compile Include="CustomerModels\CustomerCreate.cs" />
     <Compile Include="CustomerModels\CustomerDetail.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeCreate.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeDetail.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeEdit.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeListItem.cs" />
     <Compile Include="EmployeeModels\EmployeeCreate.cs" />
     <Compile Include="EmployeeModels\EmployeeDetail.cs" />
     <Compile Include="EmployeeModels\EmployeeEdit.cs" />
     <Compile Include="EmployeeModels\EmployeeListItem.cs" />
+    <Compile Include="JobInterfaces\IBasicJobInfo.cs" />
+    <Compile Include="JobInterfaces\IJobId.cs" />
     <Compile Include="JobModels\JobCreate.cs" />
     <Compile Include="JobModels\JobDetail.cs" />
     <Compile Include="JobModels\JobEdit.cs" />
@@ -74,6 +84,12 @@
     <Compile Include="MaterialModels\MaterialDetail.cs" />
     <Compile Include="MaterialModels\MaterialEdit.cs" />
     <Compile Include="MaterialModels\MaterialListItem.cs" />
+    <Compile Include="PersonInterfaces\IAddresses.cs" />
+    <Compile Include="PersonInterfaces\IContactInfo.cs" />
+    <Compile Include="PersonInterfaces\IEmployeeInfo.cs" />
+    <Compile Include="PersonInterfaces\IFullName.cs" />
+    <Compile Include="PersonInterfaces\IListOfJobs.cs" />
+    <Compile Include="PersonInterfaces\IPersonId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,5 +102,6 @@
       <Name>TheBestPainters.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

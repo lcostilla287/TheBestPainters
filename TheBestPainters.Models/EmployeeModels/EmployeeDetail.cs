@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.EmployeeInterfaces;
 
 namespace TheBestPainters.Models.EmployeeModels
 {
-    public class EmployeeDetail
+    public class EmployeeDetail : IEmployeeDetail
     {
-        public int EmployeeId { get; set; }
+        [Display(Name = "Employee Id")]
+        public int Id { get; set; }
         public int? CrewId { get; set; }
 
         public string FirstName { get; set; }

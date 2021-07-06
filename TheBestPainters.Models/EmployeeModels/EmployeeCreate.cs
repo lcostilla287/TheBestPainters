@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.EmployeeInterfaces;
 
 namespace TheBestPainters.Models.EmployeeModels
 {
-    public class EmployeeCreate
+    public class EmployeeCreate : IEmployeeCreate
     {
         public int? CrewId { get; set; }
         [Required]
