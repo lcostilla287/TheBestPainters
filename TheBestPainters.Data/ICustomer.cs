@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data
 {
-    interface ICustomer
+    public interface ICustomer
     {
         List<Job> Jobs { get; set; }
     }

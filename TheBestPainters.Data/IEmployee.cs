@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data
 {
-    interface IEmployee : IPerson
+    public interface IEmployee : IPerson
     {
         int? CrewId { get; set; }
         Crew Crew { get; set; }
