@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace TheBestPainters.Data
 {
-    public class Customer
+    public class Customer : ICustomer
     {
         [Key]
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }
