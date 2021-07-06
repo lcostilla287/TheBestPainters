@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheBestPainters.Controllers.JobResponsibilites;
 using TheBestPainters.Models.JobModels;
 using TheBestPainters.Services;
 
@@ -14,8 +15,7 @@ namespace TheBestPainters.Controllers
         // GET: Job
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new JobService(userId);
+            var service = CreateJobService();
             var model = service.GetJobs();
 
             return View(model);
@@ -58,18 +58,8 @@ namespace TheBestPainters.Controllers
         {
             var service = CreateJobService();
             var detail = service.GetJobById(id);
-            var model =
-                new JobEdit
-                {
-                    JobId = detail.JobId,
-                    CustomerId = detail.CustomerId,
-                    CrewId = detail.CrewId,
-                    JobLocation = detail.JobLocation,
-                    ScopeOfWork = detail.ScopeOfWork,
-                    Interior = detail.Interior,
-                    Exterior = detail.Exterior,
-                    Price = detail.Price
-                };
+
+            var model = EditJob.EditView(detail);
             return View(model);
         }
         

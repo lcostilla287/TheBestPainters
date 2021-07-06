@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheBestPainters.Controllers.MaterialResponsibilities;
 using TheBestPainters.Models.MaterialModels;
 using TheBestPainters.Services;
 
@@ -56,15 +57,8 @@ namespace TheBestPainters.Controllers
         {
             var service = CreateMaterialService();
             var detail = service.GetMaterialById(id);
-            var model =
-                new MaterialEdit
-                {
-                    MaterialId = detail.MaterialId,
-                    MaterialName = detail.MaterialName,
-                    JobId = detail.JobId,
-                    Price = detail.Price,
-                    Quantity = detail.Quantity
-                };
+
+            var model = EditMaterial.EditView(detail);
             return View(model);
         }
 

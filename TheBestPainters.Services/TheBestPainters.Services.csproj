@@ -54,10 +54,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewResponsibilities\CrewDataCapture.cs" />
+    <Compile Include="CrewResponsibilities\CrewQuery.cs" />
+    <Compile Include="CrewResponsibilities\CrewUpdate.cs" />
+    <Compile Include="CrewResponsibilities\FindCrew.cs" />
+    <Compile Include="CrewResponsibilities\NullEmployees.cs" />
+    <Compile Include="CrewResponsibilities\NullJobs.cs" />
+    <Compile Include="CrewResponsibilities\ReturnCrewData.cs" />
     <Compile Include="CrewService.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
+    <Compile Include="CustomerResponsibilities\FindCustomer.cs" />
+    <Compile Include="CustomerResponsibilities\NullJobs.cs" />
+    <Compile Include="CustomerResponsibilities\ReturnCustomerData.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerUpdate.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="JobResponsibilities\FindJob.cs" />
+    <Compile Include="JobResponsibilities\JobDataCapture.cs" />
+    <Compile Include="JobResponsibilities\JobQuery.cs" />
+    <Compile Include="JobResponsibilities\JobUpdate.cs" />
+    <Compile Include="JobResponsibilities\NullMaterials.cs" />
+    <Compile Include="JobResponsibilities\ReturnJobData.cs" />
     <Compile Include="JobService.cs" />
+    <Compile Include="MaterialResponsibilities\FindMaterial.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialDataCapture.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialQuery.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialUpdate.cs" />
+    <Compile Include="MaterialResponsibilities\ReturnMaterialData.cs" />
     <Compile Include="MaterialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,5 +99,6 @@
       <Name>TheBestPainters.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
