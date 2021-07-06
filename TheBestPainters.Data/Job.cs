@@ -19,7 +19,8 @@ namespace TheBestPainters.Data
         public Guid OwnerId { get; set; }
 
         [ForeignKey(nameof(Customer))]
-        public int? CustomerId { get; set; }
+        [Display(Name = "Customer Id")]
+        public int? Id { get; set; }
         public virtual Customer Customer { get; set; }
 
         [ForeignKey(nameof(Crew))]

@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Crew
+    public class Crew : ICrew
     {
         [Key]
         public int CrewId { get; set; }

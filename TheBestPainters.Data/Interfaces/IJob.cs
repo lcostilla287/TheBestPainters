@@ -12,7 +12,7 @@ namespace TheBestPainters.Data.Interfaces
 
         Guid OwnerId { get; set; }
 
-        int? CustomerId { get; set; }
+        int? Id { get; set; }
         Customer Customer { get; set; }
 
         int? CrewId { get; set; }

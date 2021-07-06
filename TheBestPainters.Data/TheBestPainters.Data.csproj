@@ -58,9 +58,11 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Interfaces\ICrew.cs" />
     <Compile Include="Interfaces\ICustomer.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\IJob.cs" />
+    <Compile Include="Interfaces\IMaterial.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Material.cs" />
