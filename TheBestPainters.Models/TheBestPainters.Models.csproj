@@ -75,7 +75,12 @@
     <Compile Include="EmployeeModels\EmployeeEdit.cs" />
     <Compile Include="EmployeeModels\EmployeeListItem.cs" />
     <Compile Include="JobInterfaces\IBasicJobInfo.cs" />
+    <Compile Include="JobInterfaces\IJobCreate.cs" />
+    <Compile Include="JobInterfaces\IJobDetail.cs" />
+    <Compile Include="JobInterfaces\IJobEdit.cs" />
     <Compile Include="JobInterfaces\IJobId.cs" />
+    <Compile Include="JobInterfaces\IJobListItem.cs" />
+    <Compile Include="JobInterfaces\IPriceAndScope.cs" />
     <Compile Include="JobModels\JobCreate.cs" />
     <Compile Include="JobModels\JobDetail.cs" />
     <Compile Include="JobModels\JobEdit.cs" />

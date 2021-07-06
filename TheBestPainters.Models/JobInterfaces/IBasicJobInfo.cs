@@ -10,7 +10,7 @@ namespace TheBestPainters.Models.JobInterfaces
     {
         int? CustomerId { get; set; }
         int? CrewId { get; set; }
-        string Location { get; set; }
+        string JobLocation { get; set; }
         bool Interior { get; set; }
         bool Exterior { get; set; }
     }

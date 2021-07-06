@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.JobInterfaces;
 
 namespace TheBestPainters.Models.JobModels
 {
-    public class JobListItem
+    public class JobListItem : IJobListItem
     {
         public int JobId { get; set; }
         public int? CustomerId { get; set; }
