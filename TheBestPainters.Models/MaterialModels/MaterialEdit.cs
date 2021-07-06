@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.MaterialInterfaces;
 
 namespace TheBestPainters.Models.MaterialModels
 {
-    public class MaterialEdit
+    public class MaterialEdit : IMaterialEdit
     {
         [Required]
         public int MaterialId { get; set; }

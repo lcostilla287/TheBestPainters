@@ -85,6 +85,14 @@
     <Compile Include="JobModels\JobDetail.cs" />
     <Compile Include="JobModels\JobEdit.cs" />
     <Compile Include="JobModels\JobListItem.cs" />
+    <Compile Include="MaterialInterfaces\IBasicMaterialInfo.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialCreate.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialDetail.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialEdit.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialId.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialListItem.cs" />
+    <Compile Include="MaterialInterfaces\IPrice.cs" />
+    <Compile Include="MaterialInterfaces\ITotalPrice.cs" />
     <Compile Include="MaterialModels\MaterialCreate.cs" />
     <Compile Include="MaterialModels\MaterialDetail.cs" />
     <Compile Include="MaterialModels\MaterialEdit.cs" />
