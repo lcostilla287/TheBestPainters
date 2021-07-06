@@ -15,8 +15,7 @@ namespace TheBestPainters.Controllers
         // GET: Job
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new JobService(userId);
+            var service = CreateJobService();
             var model = service.GetJobs();
 
             return View(model);
