@@ -72,6 +72,7 @@
     <Compile Include="CustomerModels\CustomerDetail.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="CustomerModels\ICustomerId.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeCreate.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeDetail.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeEdit.cs" />

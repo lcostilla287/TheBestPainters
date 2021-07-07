@@ -13,7 +13,7 @@ namespace TheBestPainters.Models.CustomerModels
     public class CustomerDetail: ICustomerDetail
     {
         [Display(Name = "Customer Id")]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }

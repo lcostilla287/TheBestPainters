@@ -12,7 +12,7 @@ namespace TheBestPainters.Models.CustomerModels
     {
         [Required]
         [Display(Name = "Customer Id")]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
