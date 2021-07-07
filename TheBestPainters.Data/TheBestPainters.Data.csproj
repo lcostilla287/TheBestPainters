@@ -67,29 +67,9 @@
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Material.cs" />
-    <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
-    <Compile Include="Migrations\202106281422367_InitialCreate.Designer.cs">
-      <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106281848568_JobMigration.cs" />
-    <Compile Include="Migrations\202106281848568_JobMigration.Designer.cs">
-      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291323377_CustomerWithJobs.cs" />
-    <Compile Include="Migrations\202106291323377_CustomerWithJobs.Designer.cs">
-      <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291838077_Materials.cs" />
-    <Compile Include="Migrations\202106291838077_Materials.Designer.cs">
-      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106301818322_CrewMigration.cs" />
-    <Compile Include="Migrations\202106301818322_CrewMigration.Designer.cs">
-      <DependentUpon>202106301818322_CrewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011409024_EmployeeMigration.cs" />
-    <Compile Include="Migrations\202107011409024_EmployeeMigration.Designer.cs">
-      <DependentUpon>202107011409024_EmployeeMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107071523315_InitialMigration.cs" />
+    <Compile Include="Migrations\202107071523315_InitialMigration.Designer.cs">
+      <DependentUpon>202107071523315_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,23 +79,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106281422367_InitialCreate.resx">
-      <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281848568_JobMigration.resx">
-      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291323377_CustomerWithJobs.resx">
-      <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291838077_Materials.resx">
-      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301818322_CrewMigration.resx">
-      <DependentUpon>202106301818322_CrewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011409024_EmployeeMigration.resx">
-      <DependentUpon>202107011409024_EmployeeMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107071523315_InitialMigration.resx">
+      <DependentUpon>202107071523315_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
