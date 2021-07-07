@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewInterfaces\ICrewCreate.cs" />
+    <Compile Include="CrewInterfaces\ICrewDetail.cs" />
+    <Compile Include="CrewInterfaces\ICrewEdit.cs" />
+    <Compile Include="CrewInterfaces\ICrewId.cs" />
+    <Compile Include="CrewInterfaces\ICrewListItem.cs" />
+    <Compile Include="CrewInterfaces\ICrewName.cs" />
     <Compile Include="CrewModels\CrewCreate.cs" />
     <Compile Include="CrewModels\CrewDetail.cs" />
     <Compile Include="CrewModels\CrewEdit.cs" />
