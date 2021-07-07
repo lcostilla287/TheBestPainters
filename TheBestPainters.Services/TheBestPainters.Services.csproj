@@ -75,6 +75,11 @@
     <Compile Include="EmployeeResponsibilities\EmployeeUpdate.cs" />
     <Compile Include="EmployeeResponsibilities\FindEmployee.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="ICrewService.cs" />
+    <Compile Include="ICustomerService.cs" />
+    <Compile Include="IEmployeeService.cs" />
+    <Compile Include="IJobService.cs" />
+    <Compile Include="IMaterialService.cs" />
     <Compile Include="JobResponsibilities\FindJob.cs" />
     <Compile Include="JobResponsibilities\JobDataCapture.cs" />
     <Compile Include="JobResponsibilities\JobQuery.cs" />

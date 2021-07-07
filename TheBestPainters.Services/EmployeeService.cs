@@ -9,7 +9,7 @@ using TheBestPainters.Services.EmployeeResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class EmployeeService
+    public class EmployeeService : IEmployeeService
     {
         private readonly Guid _userId;
 
@@ -34,7 +34,7 @@ namespace TheBestPainters.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = EmployeeQuery.Query(ctx, _userId);
-                    
+
                 return query.ToArray();
             }
         }

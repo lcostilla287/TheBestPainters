@@ -9,7 +9,7 @@ using TheBestPainters.Services.MaterialResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class MaterialService
+    public class MaterialService : IMaterialService
     {
         private readonly Guid _userId;
 
@@ -34,7 +34,7 @@ namespace TheBestPainters.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = MaterialQuery.Query(ctx, _userId);
-                    
+
                 return query.ToArray();
             }
         }

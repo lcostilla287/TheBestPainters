@@ -7,7 +7,7 @@ using TheBestPainters.Services.JobResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class JobService
+    public class JobService : IJobService
     {
         private readonly Guid _userId;
 

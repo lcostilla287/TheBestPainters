@@ -7,7 +7,7 @@ using TheBestPainters.Services.CrewResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class CrewService
+    public class CrewService : ICrewService
     {
         private readonly Guid _userId;
 

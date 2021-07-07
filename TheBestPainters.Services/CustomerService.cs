@@ -7,7 +7,7 @@ using TheBestPainters.Services.CustomerResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly Guid _userId;
 
@@ -42,7 +42,7 @@ namespace TheBestPainters.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = FindCustomer.GetCustomer(ctx, id, _userId);
-                
+
                 return ReturnCustomerData.CustomerData(entity);
             }
         }
