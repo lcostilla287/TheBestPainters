@@ -20,7 +20,7 @@ namespace TheBestPainters.Services.CustomerResponsibilities
                              e =>
                                  new CustomerListItem
                                  {
-                                     CustomerId = e.CustomerId,
+                                     Id = e.Id,
                                      FirstName = e.FirstName,
                                      LastName = e.LastName,
                                      PhoneNumber = e.PhoneNumber

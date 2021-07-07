@@ -20,7 +20,7 @@ namespace TheBestPainters.Services.JobResponsibilities
                 ScopeOfWork = model.ScopeOfWork,
                 Interior = model.Interior,
                 Exterior = model.Exterior,
-                CustomerId = model.CustomerId,
+                Id = model.CustomerId,
                 Price = model.Price,
                 CrewId = model.CrewId
             };

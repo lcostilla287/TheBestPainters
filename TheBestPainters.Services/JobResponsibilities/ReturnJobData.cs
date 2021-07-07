@@ -13,7 +13,7 @@ namespace TheBestPainters.Services.JobResponsibilities
                     new JobDetail
                     {
                         JobId = entity.JobId,
-                        CustomerId = entity.CustomerId,
+                        CustomerId = entity.Id,
                         CrewId = entity.CrewId,
                         ScopeOfWork = entity.ScopeOfWork,
                         JobLocation = entity.JobLocation,

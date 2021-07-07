@@ -13,7 +13,7 @@ namespace TheBestPainters.Controllers.CustomerResponsibilities
             var model =
             new CustomerEdit
             {
-                CustomerId = detail.CustomerId,
+                Id = detail.Id,
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,
                 PhoneNumber = detail.PhoneNumber,

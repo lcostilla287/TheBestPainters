@@ -70,7 +70,7 @@ namespace TheBestPainters.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.CustomerId != id)
+            if(model.Id != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

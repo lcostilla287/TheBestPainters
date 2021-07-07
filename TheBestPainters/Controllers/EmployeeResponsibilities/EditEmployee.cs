@@ -13,7 +13,7 @@ namespace TheBestPainters.Controllers.EmployeeResponsibilities
             var model =
                new EmployeeEdit
                {
-                   EmployeeId = detail.EmployeeId,
+                   Id = detail.Id,
                    FirstName = detail.FirstName,
                    LastName = detail.LastName,
                    CrewId = detail.CrewId,

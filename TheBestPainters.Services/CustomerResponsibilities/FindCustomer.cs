@@ -11,7 +11,7 @@ namespace TheBestPainters.Services.CustomerResponsibilities
             var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
+                        .Single(e => e.Id == id && e.OwnerId == _userId);
             return entity;
         }
     }

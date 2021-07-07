@@ -67,7 +67,7 @@ namespace TheBestPainters.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.EmployeeId != id)
+            if (model.Id != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

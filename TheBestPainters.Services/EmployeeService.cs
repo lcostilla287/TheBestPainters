@@ -52,7 +52,7 @@ namespace TheBestPainters.Services
                         e =>
                             new EmployeeListItem
                             {
-                                EmployeeId = e.EmployeeId,
+                                Id = e.Id,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 CrewId = e.CrewId,
@@ -70,12 +70,12 @@ namespace TheBestPainters.Services
                 var entity =
                     ctx
                         .Employees
-                        .Single(e => e.EmployeeId == id && e.OwnerId == _userId);
+                        .Single(e => e.Id == id && e.OwnerId == _userId);
 
                 return
                     new EmployeeDetail
                     {
-                        EmployeeId = entity.EmployeeId,
+                        Id = entity.Id,
                         CrewId = entity.CrewId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
@@ -95,7 +95,7 @@ namespace TheBestPainters.Services
                 var entity =
                     ctx
                     .Employees
-                    .Single(e => e.EmployeeId == model.EmployeeId && e.OwnerId == _userId);
+                    .Single(e => e.Id == model.Id && e.OwnerId == _userId);
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
@@ -117,7 +117,7 @@ namespace TheBestPainters.Services
                 var entity =
                     ctx
                         .Employees
-                        .Single(e => e.EmployeeId == employeeId && e.OwnerId == _userId);
+                        .Single(e => e.Id == employeeId && e.OwnerId == _userId);
 
                 ctx.Employees.Remove(entity);
 
