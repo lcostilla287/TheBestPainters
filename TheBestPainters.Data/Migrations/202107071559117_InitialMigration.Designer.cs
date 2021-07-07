@@ -13,7 +13,7 @@ namespace TheBestPainters.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202107071523315_InitialMigration"; }
+            get { return "202107071559117_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

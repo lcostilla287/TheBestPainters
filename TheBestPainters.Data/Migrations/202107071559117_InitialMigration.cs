@@ -21,7 +21,7 @@ namespace TheBestPainters.Data.Migrations
                 "dbo.Employee",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        EmployeeId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         CrewId = c.Int(),
                         FirstName = c.String(nullable: false),
@@ -33,7 +33,7 @@ namespace TheBestPainters.Data.Migrations
                         IsCrewChief = c.Boolean(nullable: false),
                         DateHired = c.DateTimeOffset(nullable: false, precision: 7),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.EmployeeId)
                 .ForeignKey("dbo.Crew", t => t.CrewId)
                 .Index(t => t.CrewId);
             
@@ -61,7 +61,7 @@ namespace TheBestPainters.Data.Migrations
                 "dbo.Customer",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        CustomerId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
@@ -70,7 +70,7 @@ namespace TheBestPainters.Data.Migrations
                         CityAddress = c.String(nullable: false),
                         Email = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.CustomerId);
             
             CreateTable(
                 "dbo.Material",
