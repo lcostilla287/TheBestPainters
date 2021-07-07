@@ -7,7 +7,7 @@ using TheBestPainters.Models.PersonInterfaces;
 
 namespace TheBestPainters.Models.EmployeeInterfaces
 {
-    public interface IEmployeeListItem : IPersonId, IContactInfo, IFullName, IEmployeeInfo
+    public interface IEmployeeListItem : IContactInfo, IFullName, IEmployeeInfo, IEmployeeId
     {
     }
 }

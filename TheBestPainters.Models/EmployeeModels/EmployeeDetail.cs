@@ -11,7 +11,7 @@ namespace TheBestPainters.Models.EmployeeModels
     public class EmployeeDetail : IEmployeeDetail
     {
         [Display(Name = "Employee Id")]
-        public int Id { get; set; }
+        public int EmployeeId { get; set; }
         public int? CrewId { get; set; }
 
         public string FirstName { get; set; }

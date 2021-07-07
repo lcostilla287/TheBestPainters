@@ -15,7 +15,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
             return
                     new EmployeeDetail
                     {
-                        Id = entity.Id,
+                        EmployeeId = entity.EmployeeId,
                         CrewId = entity.CrewId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,

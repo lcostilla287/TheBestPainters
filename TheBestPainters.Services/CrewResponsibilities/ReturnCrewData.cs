@@ -28,7 +28,7 @@ namespace TheBestPainters.Services.CrewResponsibilities
                         Employees = entity.Employees
                         .Select(e => new EmployeeListItem()
                         {
-                            Id = e.Id,
+                            EmployeeId = e.EmployeeId,
                             FirstName = e.FirstName,
                             LastName = e.LastName
                         }).ToList()

@@ -11,7 +11,7 @@ namespace TheBestPainters.Models.EmployeeModels
     public class EmployeeEdit : IEmployeeEdit
     {
         [Required]
-        public int Id { get; set; }
+        public int EmployeeId { get; set; }
         public int? CrewId { get; set; }
         [Required]
         public string FirstName { get; set; }

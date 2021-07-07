@@ -20,7 +20,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
                         e =>
                             new EmployeeListItem
                             {
-                                Id = e.Id,
+                                EmployeeId = e.EmployeeId,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 CrewId = e.CrewId,

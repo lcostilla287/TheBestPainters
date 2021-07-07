@@ -8,6 +8,7 @@ namespace TheBestPainters.Data
 {
     public interface IEmployee : IPerson
     {
+        int EmployeeId { get; set; }
         int? CrewId { get; set; }
         Crew Crew { get; set; }
         bool IsCrewChief { get; set; }

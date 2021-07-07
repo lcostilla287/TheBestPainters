@@ -12,7 +12,7 @@ namespace TheBestPainters.Data
     {
         [Key]
         [Display(Name = "CustomerId")]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }

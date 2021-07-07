@@ -75,6 +75,7 @@
     <Compile Include="EmployeeInterfaces\IEmployeeCreate.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeDetail.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeEdit.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeId.cs" />
     <Compile Include="EmployeeInterfaces\IEmployeeListItem.cs" />
     <Compile Include="EmployeeModels\EmployeeCreate.cs" />
     <Compile Include="EmployeeModels\EmployeeDetail.cs" />
@@ -108,7 +109,6 @@
     <Compile Include="PersonInterfaces\IEmployeeInfo.cs" />
     <Compile Include="PersonInterfaces\IFullName.cs" />
     <Compile Include="PersonInterfaces\IListOfJobs.cs" />
-    <Compile Include="PersonInterfaces\IPersonId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

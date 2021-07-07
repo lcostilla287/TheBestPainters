@@ -7,7 +7,7 @@ using TheBestPainters.Models.PersonInterfaces;
 
 namespace TheBestPainters.Models.EmployeeInterfaces
 {
-    public interface IEmployeeDetail : IPersonId, IEmployeeInfo, IContactInfo, IAddresses
+    public interface IEmployeeDetail : IEmployeeInfo, IContactInfo, IAddresses, IEmployeeId
     {
         DateTimeOffset DateHired { get; set; }
     }

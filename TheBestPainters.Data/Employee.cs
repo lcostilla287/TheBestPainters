@@ -14,7 +14,7 @@ namespace TheBestPainters.Data
         
         [Key]
         [Display(Name = "EmployeeId")]
-        public int Id { get; set; }
+        public int EmployeeId { get; set; }
 
         [Required]
         public Guid OwnerId { get; set; }

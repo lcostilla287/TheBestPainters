@@ -16,7 +16,7 @@ namespace TheBestPainters.Services.CustomerResponsibilities
             return
                     new CustomerDetail
                     {
-                        Id = customer.Id,
+                        CustomerId = customer.CustomerId,
                         FirstName = customer.FirstName,
                         LastName = customer.LastName,
                         PhoneNumber = customer.PhoneNumber,

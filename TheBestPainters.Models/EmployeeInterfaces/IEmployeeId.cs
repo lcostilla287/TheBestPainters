@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheBestPainters.Models.PersonInterfaces
+namespace TheBestPainters.Models.EmployeeInterfaces
 {
-    public interface IPersonId
+    public interface IEmployeeId
     {
-        int Id { get; set; }
+        int EmployeeId { get; set; }
     }
 }

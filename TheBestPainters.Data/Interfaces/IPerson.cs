@@ -9,7 +9,6 @@ namespace TheBestPainters.Data
 {
     public interface IPerson : IIdentification
     {
-        int Id { get; set; }
 
         string FirstName { get; set; }
 
