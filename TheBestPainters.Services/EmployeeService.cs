@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.EmployeeModels;
+using TheBestPainters.Services.EmployeeResponsibilities;
 
 namespace TheBestPainters.Services
 {
@@ -19,19 +20,7 @@ namespace TheBestPainters.Services
 
         public bool CreateEmployee(EmployeeCreate model)
         {
-            var entity =
-                new Employee()
-                {
-                    OwnerId = _userId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    CrewId = model.CrewId,
-                    StreetAddress = model.StreetAddress,
-                    CityAddress = model.CityAddress,
-                    PhoneNumber = model.PhoneNumber,
-                    Email = model.Email,
-                    IsCrewChief = model.IsCrewChief
-                };
+            var entity = EmployeeDataCapture.Capture(model, _userId);
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,21 +33,8 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                    .Employees
-                    .Where(e => e.OwnerId == _userId)
-                    .Select(
-                        e =>
-                            new EmployeeListItem
-                            {
-                                Id = e.Id,
-                                FirstName = e.FirstName,
-                                LastName = e.LastName,
-                                CrewId = e.CrewId,
-                                IsCrewChief = e.IsCrewChief
-                            }
-                        );
+                var query = EmployeeQuery.Query(ctx, _userId);
+                    
                 return query.ToArray();
             }
         }
@@ -67,24 +43,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Employees
-                        .Single(e => e.Id == id && e.OwnerId == _userId);
+                var entity = FindEmployee.GetEmployee(ctx, id, _userId);
 
-                return
-                    new EmployeeDetail
-                    {
-                        Id = entity.Id,
-                        CrewId = entity.CrewId,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
-                        StreetAddress = entity.StreetAddress,
-                        CityAddress = entity.CityAddress,
-                        PhoneNumber = entity.PhoneNumber,
-                        Email = entity.Email,
-                        IsCrewChief = entity.IsCrewChief
-                    };
+                return EmployeeData.Return(entity);
             }
         }
 
@@ -92,19 +53,9 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                    .Employees
-                    .Single(e => e.Id == model.Id && e.OwnerId == _userId);
+                var entity = FindEmployee.GetEmployee(ctx, model.Id, _userId);
 
-                entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
-                entity.StreetAddress = model.StreetAddress;
-                entity.CityAddress = model.CityAddress;
-                entity.CrewId = model.CrewId;
-                entity.PhoneNumber = model.PhoneNumber;
-                entity.Email = model.Email;
-                entity.IsCrewChief = model.IsCrewChief;
+                EmployeeUpdate.Update(entity, model);
 
                 return ctx.SaveChanges() == 1;
             }
@@ -114,10 +65,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
-                    ctx
-                        .Employees
-                        .Single(e => e.Id == employeeId && e.OwnerId == _userId);
+                var entity = FindEmployee.GetEmployee(ctx, employeeId, _userId);
 
                 ctx.Employees.Remove(entity);
 

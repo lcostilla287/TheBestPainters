@@ -25,6 +25,7 @@ namespace TheBestPainters.Models.EmployeeModels
 
         [Display(Name = "City Address")]
         public string CityAddress { get; set; }
+        public DateTimeOffset DateHired { get; set; }
         public string Email { get; set; }
         public bool IsCrewChief { get; set; }
     }

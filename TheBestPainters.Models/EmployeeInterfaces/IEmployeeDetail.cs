@@ -9,5 +9,6 @@ namespace TheBestPainters.Models.EmployeeInterfaces
 {
     public interface IEmployeeDetail : IPersonId, IEmployeeInfo, IContactInfo, IAddresses
     {
+        DateTimeOffset DateHired { get; set; }
     }
 }

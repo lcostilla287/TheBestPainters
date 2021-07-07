@@ -69,6 +69,11 @@
     <Compile Include="CustomerResponsibilities\ReturnCustomerData.cs" />
     <Compile Include="CustomerResponsibilities\CustomerUpdate.cs" />
     <Compile Include="CustomerService.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeData.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeDataCapture.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeQuery.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeUpdate.cs" />
+    <Compile Include="EmployeeResponsibilities\FindEmployee.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="JobResponsibilities\FindJob.cs" />
     <Compile Include="JobResponsibilities\JobDataCapture.cs" />
