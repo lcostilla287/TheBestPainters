@@ -53,7 +53,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = FindEmployee.GetEmployee(ctx, model.Id, _userId);
+                var entity = FindEmployee.GetEmployee(ctx, model.EmployeeId, _userId);
 
                 EmployeeUpdate.Update(entity, model);
 

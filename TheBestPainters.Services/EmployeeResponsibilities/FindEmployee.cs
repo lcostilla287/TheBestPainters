@@ -14,7 +14,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
             var entity =
                     ctx
                         .Employees
-                        .Single(e => e.Id == id && e.OwnerId == _userId);
+                        .Single(e => e.EmployeeId == id && e.OwnerId == _userId);
             return entity;
         }
     }

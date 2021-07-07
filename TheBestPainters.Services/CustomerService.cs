@@ -51,7 +51,7 @@ namespace TheBestPainters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = FindCustomer.GetCustomer(ctx, model.Id, _userId);
+                var entity = FindCustomer.GetCustomer(ctx, model.CustomerId, _userId);
 
                 CustomerUpdate.Update(model, entity);
                 return ctx.SaveChanges() == 1;
