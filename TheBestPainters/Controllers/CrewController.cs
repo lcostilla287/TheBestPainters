@@ -109,10 +109,10 @@ namespace TheBestPainters.Controllers
             return RedirectToAction("Index");
         }
 
-        private CrewService CreateCrewService()
+        private ICrewService CreateCrewService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CrewService(userId);
+            var service = InstantiateServices.CrewService(userId);
             return service;
         }
     }

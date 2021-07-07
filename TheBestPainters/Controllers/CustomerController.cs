@@ -110,10 +110,10 @@ namespace TheBestPainters.Controllers
             return RedirectToAction("Index");
         }
 
-        private CustomerService CreateCustomerService()
+        private ICustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CustomerService(userId);
+            ICustomerService service = InstantiateServices.CustomerService(userId);
             return service;
         }
     }

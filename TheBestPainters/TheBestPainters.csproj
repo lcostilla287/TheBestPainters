@@ -175,6 +175,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeResponsibilities\EditEmployee.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstantiateServices.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\JobResponsibilites\EditJob.cs" />
     <Compile Include="Controllers\ManageController.cs" />
