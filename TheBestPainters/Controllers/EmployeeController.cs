@@ -106,10 +106,10 @@ namespace TheBestPainters.Controllers
 
             return RedirectToAction("Index");
         }
-        private EmployeeService CreateEmployeeService()
+        private IEmployeeService CreateEmployeeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new EmployeeService(userId);
+            var service = InstantiateServices.EmployeeService(userId); //new EmployeeService(userId);
             return service;
         }
     }

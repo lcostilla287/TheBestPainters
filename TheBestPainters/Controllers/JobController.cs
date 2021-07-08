@@ -109,10 +109,10 @@ namespace TheBestPainters.Controllers
 
             return RedirectToAction("Index");
         }
-        private JobService CreateJobService()
+        private IJobService CreateJobService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new JobService(userId);
+            var service = InstantiateServices.JobService(userId);
             return service;
         }
     }

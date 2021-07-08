@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Crew
+    public class Crew : ICrew
     {
         [Key]
         public int CrewId { get; set; }
@@ -16,6 +17,6 @@ namespace TheBestPainters.Data
         [Required]
         public string CrewName { get; set; }
         public virtual List<Job> Jobs { get; set; } = new List<Job>();
-        public virtual List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<IEmployee> Employees { get; set; } = new List<IEmployee>();
     }
 }

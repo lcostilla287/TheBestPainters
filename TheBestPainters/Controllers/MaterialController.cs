@@ -108,10 +108,10 @@ namespace TheBestPainters.Controllers
 
             return RedirectToAction("Index");
         }
-        private MaterialService CreateMaterialService()
+        private IMaterialService CreateMaterialService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MaterialService(userId);
+            var service = InstantiateServices.MaterialService(userId);
             return service;
         }
     }

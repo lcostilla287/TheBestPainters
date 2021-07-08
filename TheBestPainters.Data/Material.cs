@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Material
+    public class Material : IMaterial
     {
         [Key]
         public int MaterialId { get; set; }

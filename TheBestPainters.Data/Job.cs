@@ -6,10 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Job
+    public class Job : IJob
     {
         [Key]
         public int JobId { get; set; }
@@ -18,6 +19,7 @@ namespace TheBestPainters.Data
         public Guid OwnerId { get; set; }
 
         [ForeignKey(nameof(Customer))]
+        [Display(Name = "Customer Id")]
         public int? CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 

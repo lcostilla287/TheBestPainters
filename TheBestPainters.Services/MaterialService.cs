@@ -9,7 +9,7 @@ using TheBestPainters.Services.MaterialResponsibilities;
 
 namespace TheBestPainters.Services
 {
-    public class MaterialService
+    public class MaterialService : IMaterialService
     {
         private readonly Guid _userId;
 
@@ -24,7 +24,7 @@ namespace TheBestPainters.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Materials.Add(entity);
+                ctx.Materials.Add((Material)entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -34,7 +34,7 @@ namespace TheBestPainters.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var query = MaterialQuery.Query(ctx, _userId);
-                    
+
                 return query.ToArray();
             }
         }
@@ -45,7 +45,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindMaterial.GetMaterial(ctx, id, _userId);
 
-                return ReturnMaterialData.MaterialData(entity);
+                return (MaterialDetail)ReturnMaterialData.MaterialData(entity);
             }
         }
 

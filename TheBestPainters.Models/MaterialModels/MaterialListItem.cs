@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.MaterialInterfaces;
 
 namespace TheBestPainters.Models.MaterialModels
 {
-    public class MaterialListItem
+    public class MaterialListItem : IMaterialListItem
     {
         public int MaterialId { get; set; }
         public int? JobId { get; set; }

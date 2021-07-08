@@ -43,9 +43,24 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,26 +69,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewInterfaces\ICrewCreate.cs" />
+    <Compile Include="CrewInterfaces\ICrewDetail.cs" />
+    <Compile Include="CrewInterfaces\ICrewEdit.cs" />
+    <Compile Include="CrewInterfaces\ICrewId.cs" />
+    <Compile Include="CrewInterfaces\ICrewListItem.cs" />
+    <Compile Include="CrewInterfaces\ICrewName.cs" />
     <Compile Include="CrewModels\CrewCreate.cs" />
     <Compile Include="CrewModels\CrewDetail.cs" />
     <Compile Include="CrewModels\CrewEdit.cs" />
     <Compile Include="CrewModels\CrewListItem.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerCreate.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerDetail.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerEdit.cs" />
+    <Compile Include="CustomerInterfaces\ICustomerListItem.cs" />
     <Compile Include="CustomerModels\CustomerCreate.cs" />
     <Compile Include="CustomerModels\CustomerDetail.cs" />
     <Compile Include="CustomerModels\CustomerEdit.cs" />
     <Compile Include="CustomerModels\CustomerListItem.cs" />
+    <Compile Include="CustomerModels\ICustomerId.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeCreate.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeDetail.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeEdit.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeId.cs" />
+    <Compile Include="EmployeeInterfaces\IEmployeeListItem.cs" />
     <Compile Include="EmployeeModels\EmployeeCreate.cs" />
     <Compile Include="EmployeeModels\EmployeeDetail.cs" />
     <Compile Include="EmployeeModels\EmployeeEdit.cs" />
     <Compile Include="EmployeeModels\EmployeeListItem.cs" />
+    <Compile Include="JobInterfaces\IBasicJobInfo.cs" />
+    <Compile Include="JobInterfaces\IJobCreate.cs" />
+    <Compile Include="JobInterfaces\IJobDetail.cs" />
+    <Compile Include="JobInterfaces\IJobEdit.cs" />
+    <Compile Include="JobInterfaces\IJobId.cs" />
+    <Compile Include="JobInterfaces\IJobListItem.cs" />
+    <Compile Include="JobInterfaces\IPriceAndScope.cs" />
     <Compile Include="JobModels\JobCreate.cs" />
     <Compile Include="JobModels\JobDetail.cs" />
     <Compile Include="JobModels\JobEdit.cs" />
     <Compile Include="JobModels\JobListItem.cs" />
+    <Compile Include="MaterialInterfaces\IBasicMaterialInfo.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialCreate.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialDetail.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialEdit.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialId.cs" />
+    <Compile Include="MaterialInterfaces\IMaterialListItem.cs" />
+    <Compile Include="MaterialInterfaces\IPrice.cs" />
+    <Compile Include="MaterialInterfaces\ITotalPrice.cs" />
     <Compile Include="MaterialModels\MaterialCreate.cs" />
     <Compile Include="MaterialModels\MaterialDetail.cs" />
     <Compile Include="MaterialModels\MaterialEdit.cs" />
     <Compile Include="MaterialModels\MaterialListItem.cs" />
+    <Compile Include="PersonInterfaces\IAddresses.cs" />
+    <Compile Include="PersonInterfaces\IContactInfo.cs" />
+    <Compile Include="PersonInterfaces\IEmployeeInfo.cs" />
+    <Compile Include="PersonInterfaces\IFullName.cs" />
+    <Compile Include="PersonInterfaces\IListOfJobs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,5 +137,6 @@
       <Name>TheBestPainters.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

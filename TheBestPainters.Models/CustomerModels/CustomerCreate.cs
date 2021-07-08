@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.CustomerInterfaces;
 
 namespace TheBestPainters.Models.CustomerModels
 {
-    public class CustomerCreate
+    public class CustomerCreate : ICustomerCreate
     {
         [Required]
         public string FirstName { get; set; }

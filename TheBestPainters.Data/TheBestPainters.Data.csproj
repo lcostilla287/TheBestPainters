@@ -43,9 +43,24 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,31 +73,22 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Interfaces\ICrew.cs" />
+    <Compile Include="Interfaces\ICustomer.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IIdentification.cs" />
+    <Compile Include="Interfaces\IJob.cs" />
+    <Compile Include="Interfaces\IMaterial.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Material.cs" />
-    <Compile Include="Migrations\202106281422367_InitialCreate.cs" />
-    <Compile Include="Migrations\202106281422367_InitialCreate.Designer.cs">
-      <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107071559117_InitialMigration.cs" />
+    <Compile Include="Migrations\202107071559117_InitialMigration.Designer.cs">
+      <DependentUpon>202107071559117_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106281848568_JobMigration.cs" />
-    <Compile Include="Migrations\202106281848568_JobMigration.Designer.cs">
-      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291323377_CustomerWithJobs.cs" />
-    <Compile Include="Migrations\202106291323377_CustomerWithJobs.Designer.cs">
-      <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291838077_Materials.cs" />
-    <Compile Include="Migrations\202106291838077_Materials.Designer.cs">
-      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106301818322_CrewMigration.cs" />
-    <Compile Include="Migrations\202106301818322_CrewMigration.Designer.cs">
-      <DependentUpon>202106301818322_CrewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011409024_EmployeeMigration.cs" />
-    <Compile Include="Migrations\202107011409024_EmployeeMigration.Designer.cs">
-      <DependentUpon>202107011409024_EmployeeMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107082101083_CustomerIdMigration.cs" />
+    <Compile Include="Migrations\202107082101083_CustomerIdMigration.Designer.cs">
+      <DependentUpon>202107082101083_CustomerIdMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,23 +98,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106281422367_InitialCreate.resx">
-      <DependentUpon>202106281422367_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107071559117_InitialMigration.resx">
+      <DependentUpon>202107071559117_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281848568_JobMigration.resx">
-      <DependentUpon>202106281848568_JobMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291323377_CustomerWithJobs.resx">
-      <DependentUpon>202106291323377_CustomerWithJobs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291838077_Materials.resx">
-      <DependentUpon>202106291838077_Materials.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301818322_CrewMigration.resx">
-      <DependentUpon>202106301818322_CrewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011409024_EmployeeMigration.resx">
-      <DependentUpon>202107011409024_EmployeeMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107082101083_CustomerIdMigration.resx">
+      <DependentUpon>202107082101083_CustomerIdMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.JobInterfaces;
 
 namespace TheBestPainters.Models.JobModels
 {
-    public class JobCreate
+    public class JobCreate : IJobCreate
     {
         public int? CustomerId { get; set; }
         public int? CrewId { get; set; }

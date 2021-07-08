@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Customer
+    public class Customer : ICustomer
     {
         [Key]
+        [Display(Name = "CustomerId")]
         public int CustomerId { get; set; }
 
         [Required]

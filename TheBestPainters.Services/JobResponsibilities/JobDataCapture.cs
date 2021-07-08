@@ -4,26 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
+using TheBestPainters.Data.Interfaces;
 using TheBestPainters.Models.JobModels;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Services.JobResponsibilities
 {
     public class JobDataCapture
     {
-        public static Job Capture(JobCreate model, Guid _userId)
+        public static IJob Capture(JobCreate model, Guid _userId)
         {
-            var entity =
-            new Job()
-            {
-                OwnerId = _userId,
-                JobLocation = model.JobLocation,
-                ScopeOfWork = model.ScopeOfWork,
-                Interior = model.Interior,
-                Exterior = model.Exterior,
-                CustomerId = model.CustomerId,
-                Price = model.Price,
-                CrewId = model.CrewId
-            };
+            var entity = InstantiateModels.MakeJob();
+
+            entity.OwnerId = _userId;
+            entity.JobLocation = model.JobLocation;
+            entity.ScopeOfWork = model.ScopeOfWork;
+            entity.Interior = model.Interior;
+            entity.Exterior = model.Exterior;
+            entity.CustomerId = model.CustomerId;
+            entity.Price = model.Price;
+            entity.CrewId = model.CrewId;
+
             return entity;
         }
     }

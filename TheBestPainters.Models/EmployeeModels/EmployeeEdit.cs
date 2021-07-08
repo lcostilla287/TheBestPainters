@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBestPainters.Models.EmployeeInterfaces;
 
 namespace TheBestPainters.Models.EmployeeModels
 {
-    public class EmployeeEdit
+    public class EmployeeEdit : IEmployeeEdit
     {
         [Required]
         public int EmployeeId { get; set; }

@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
+using TheBestPainters.Models.CustomerInterfaces;
 using TheBestPainters.Models.JobModels;
 
 namespace TheBestPainters.Models.CustomerModels
 {
-    public class CustomerDetail
+    public class CustomerDetail: ICustomerDetail
     {
+        [Display(Name = "Customer Id")]
         public int CustomerId { get; set; }
 
         public string FirstName { get; set; }

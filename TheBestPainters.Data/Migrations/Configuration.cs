@@ -10,7 +10,6 @@ namespace TheBestPainters.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "TheBestPainters.Data.ApplicationDbContext";
         }
 
         protected override void Seed(TheBestPainters.Data.ApplicationDbContext context)
