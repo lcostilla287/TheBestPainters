@@ -8,7 +8,7 @@ namespace TheBestPainters.Controllers
 {
     public class InstantiateServices
     {
-        //Factory I
+        //Factory
         //Dependency Inversion? 
         public static ICustomerService CustomerService(Guid userId)
         {

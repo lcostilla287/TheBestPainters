@@ -13,7 +13,6 @@ namespace TheBestPainters.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
-        // GET: Customer
         public ActionResult Index()
         {
             var service = CreateCustomerService();

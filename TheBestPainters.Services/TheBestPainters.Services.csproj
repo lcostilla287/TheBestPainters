@@ -95,7 +95,7 @@
     <Compile Include="IEmployeeService.cs" />
     <Compile Include="IJobService.cs" />
     <Compile Include="IMaterialService.cs" />
-    <Compile Include="InstantiateModels\InstantiateModels.cs" />
+    <Compile Include="Instantiate\InstantiateModels.cs" />
     <Compile Include="JobResponsibilities\FindJob.cs" />
     <Compile Include="JobResponsibilities\JobDataCapture.cs" />
     <Compile Include="JobResponsibilities\JobQuery.cs" />

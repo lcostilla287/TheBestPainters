@@ -4,6 +4,7 @@ using System.Linq;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
 using TheBestPainters.Services.CustomerResponsibilities;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Services
 {
@@ -18,11 +19,10 @@ namespace TheBestPainters.Services
 
         public bool CreateCustomer(CustomerCreate model)
         {
-            Customer entity = CustomerDataCapture.Capture(model, _userId);
-
+            var entity = CustomerDataCapture.Capture(model, _userId);
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Customers.Add(entity);
+                ctx.Customers.Add((Customer)entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -43,7 +43,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindCustomer.GetCustomer(ctx, id, _userId);
 
-                return ReturnCustomerData.CustomerData(entity);
+                return (CustomerDetail)ReturnCustomerData.CustomerData(entity);
             }
         }
 

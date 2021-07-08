@@ -16,12 +16,12 @@ using TheBestPainters.Models.JobModels;
 using TheBestPainters.Models.MaterialInterfaces;
 using TheBestPainters.Models.MaterialModels;
 
-namespace TheBestPainters.Services.InstantiateModels
+namespace TheBestPainters.Services.Instantiate
 {
     public class InstantiateModels
     {
         //Customer
-        public static ICustomer Customer()
+        public static ICustomer MakeCustomer()
         {
             return new Customer();
         }
@@ -42,7 +42,7 @@ namespace TheBestPainters.Services.InstantiateModels
             return new CustomerListItem();
         }
         //Job
-        public static IJob Job()
+        public static IJob MakeJob()
         {
             return new Job();
         }
@@ -63,7 +63,7 @@ namespace TheBestPainters.Services.InstantiateModels
             return new JobListItem();
         }
         //Material
-        public static IMaterial Material()
+        public static IMaterial MakeMaterial()
         {
             return new Material();
         }
@@ -84,7 +84,7 @@ namespace TheBestPainters.Services.InstantiateModels
             return new MaterialListItem();
         }
         //Crew
-        public static ICrew Crew()
+        public static ICrew MakeCrew()
         {
             return new Crew();
         }
@@ -105,7 +105,7 @@ namespace TheBestPainters.Services.InstantiateModels
             return new CrewListItem();
         }
         //Employee
-        public static IEmployee Employee()
+        public static IEmployee MakeEmployee()
         {
             return new Employee();
         }
@@ -124,11 +124,6 @@ namespace TheBestPainters.Services.InstantiateModels
         public static IEmployeeListItem EmployeeListItem()
         {
             return new EmployeeListItem();
-        }
-        //ApplicationDbContext
-        public static IApplicationDbContext ApplicationDbContext()
-        {
-            return new ApplicationDbContext();
         }
     }
 }

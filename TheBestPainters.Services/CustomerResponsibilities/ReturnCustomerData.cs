@@ -4,33 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
+using TheBestPainters.Models.CustomerInterfaces;
 using TheBestPainters.Models.CustomerModels;
 using TheBestPainters.Models.JobModels;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Services.CustomerResponsibilities
 {
     public class ReturnCustomerData
     {
-        public static CustomerDetail CustomerData(Customer customer)
+        public static ICustomerDetail CustomerData(Customer customer)
         {
-            return
-                    new CustomerDetail
-                    {
-                        CustomerId = customer.CustomerId,
-                        FirstName = customer.FirstName,
-                        LastName = customer.LastName,
-                        PhoneNumber = customer.PhoneNumber,
-                        StreetAddress = customer.StreetAddress,
-                        CityAddress = customer.CityAddress,
-                        Email = customer.Email,
+            var cust = InstantiateModels.CustomerDetail();
 
-                        Jobs = customer.Jobs
-                        .Select(e => new JobListItem()
-                        {
-                            JobId = e.JobId,
-                            JobLocation = e.JobLocation,
-                        }).ToList()
-                    };
+            cust.CustomerId = customer.CustomerId;
+            cust.FirstName = customer.FirstName;
+            cust.LastName = customer.LastName;
+            cust.PhoneNumber = customer.PhoneNumber;
+            cust.StreetAddress = customer.StreetAddress;
+            cust.CityAddress = customer.CityAddress;
+            cust.Email = customer.Email;
+
+            cust.Jobs = customer.Jobs
+            .Select(e => new JobListItem()
+            {
+                JobId = e.JobId,
+                JobLocation = e.JobLocation,
+            }).ToList();
+
+            return cust;
         }
     }
 }

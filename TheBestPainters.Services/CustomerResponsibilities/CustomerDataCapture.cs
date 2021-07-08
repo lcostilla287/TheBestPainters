@@ -5,24 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.CustomerModels;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Services.CustomerResponsibilities
 {
     public class CustomerDataCapture
     {
-        public static Customer Capture(CustomerCreate model, Guid _userId)
+        public static ICustomer Capture(CustomerCreate model, Guid _userId)
         {
-            var entity =
-                new Customer()
-                {
-                OwnerId = _userId,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                PhoneNumber = model.PhoneNumber,
-                StreetAddress = model.StreetAddress,
-                CityAddress = model.CityAddress,
-                Email = model.Email
-                };
+            var entity = InstantiateModels.MakeCustomer();
+
+            entity.OwnerId = _userId;
+            entity.FirstName = model.FirstName;
+            entity.LastName = model.LastName;
+            entity.PhoneNumber = model.PhoneNumber;
+            entity.StreetAddress = model.StreetAddress;
+            entity.CityAddress = model.CityAddress;
+            entity.Email = model.Email;
+
             return entity;
         }
     }
