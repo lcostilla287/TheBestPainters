@@ -10,7 +10,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
 {
     public class EmployeeData
     {
-        public static EmployeeDetail Return(Employee entity)
+        public static EmployeeDetail Return(IEmployee entity)
         {
             return
                     new EmployeeDetail

@@ -22,7 +22,7 @@ namespace TheBestPainters.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Crews.Add(entity);
+                ctx.Crews.Add((Crew)entity);
                 return ctx.SaveChanges() == 1;
             }
 
@@ -43,7 +43,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindCrew.GetCrew(ctx, id, _userId);
 
-                return ReturnCrewData.CrewData(entity);
+                return (CrewDetail)ReturnCrewData.CrewData(entity);
             }
         }
 

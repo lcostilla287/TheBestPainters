@@ -5,27 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using TheBestPainters.Data;
 using TheBestPainters.Models.EmployeeModels;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Services.EmployeeResponsibilities
 {
     public class EmployeeDataCapture
     {
-        public static Employee Capture(EmployeeCreate model, Guid _userId)
+        public static IEmployee Capture(EmployeeCreate model, Guid _userId)
         {
-            var entity =
-                new Employee()
-                {
-                    OwnerId = _userId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    CrewId = model.CrewId,
-                    StreetAddress = model.StreetAddress,
-                    CityAddress = model.CityAddress,
-                    PhoneNumber = model.PhoneNumber,
-                    Email = model.Email,
-                    IsCrewChief = model.IsCrewChief,
-                    DateHired = DateTimeOffset.Now
-                };
+            var entity = InstantiateModels.MakeEmployee();
+
+            entity.OwnerId = _userId;
+            entity.FirstName = model.FirstName;
+            entity.LastName = model.LastName;
+            entity.CrewId = model.CrewId;
+            entity.StreetAddress = model.StreetAddress;
+            entity.CityAddress = model.CityAddress;
+            entity.PhoneNumber = model.PhoneNumber;
+            entity.Email = model.Email;
+            entity.IsCrewChief = model.IsCrewChief;
+            entity.DateHired = DateTimeOffset.Now;
             return entity;
         }
     }

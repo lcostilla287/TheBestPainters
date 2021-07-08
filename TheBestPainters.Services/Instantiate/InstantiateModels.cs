@@ -107,7 +107,7 @@ namespace TheBestPainters.Services.Instantiate
         //Employee
         public static IEmployee MakeEmployee()
         {
-            return new Employee();
+            return new IEmployee();
         }
         public static IEmployeeDetail EmployeeDetail()
         {

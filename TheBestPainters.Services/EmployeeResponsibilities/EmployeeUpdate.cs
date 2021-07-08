@@ -10,7 +10,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
 {
     public class EmployeeUpdate
     {
-        public static void Update(Employee entity, EmployeeEdit model)
+        public static void Update(IEmployee entity, EmployeeEdit model)
         {
             entity.FirstName = model.FirstName;
             entity.LastName = model.LastName;

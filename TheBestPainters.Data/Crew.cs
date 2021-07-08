@@ -17,6 +17,6 @@ namespace TheBestPainters.Data
         [Required]
         public string CrewName { get; set; }
         public virtual List<Job> Jobs { get; set; } = new List<Job>();
-        public virtual List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<IEmployee> Employees { get; set; } = new List<IEmployee>();
     }
 }

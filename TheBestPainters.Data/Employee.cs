@@ -9,7 +9,7 @@ using TheBestPainters.Data.Interfaces;
 
 namespace TheBestPainters.Data
 {
-    public class Employee : IEmployee
+    public class IEmployee : IEmployee
     {
         
         [Key]
