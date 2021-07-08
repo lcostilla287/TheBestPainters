@@ -24,7 +24,7 @@ namespace TheBestPainters.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Employees.Add(entity);
+                ctx.Employees.Add((Employee)entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -45,7 +45,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindEmployee.GetEmployee(ctx, id, _userId);
 
-                return EmployeeData.Return(entity);
+                return (EmployeeDetail)EmployeeData.Return(entity);
             }
         }
 

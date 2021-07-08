@@ -9,7 +9,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
 {
     public class FindEmployee
     {
-        public static IEmployee GetEmployee(ApplicationDbContext ctx, int id, Guid _userId)
+        public static Employee GetEmployee(ApplicationDbContext ctx, int id, Guid _userId)
         {
             var entity =
                     ctx

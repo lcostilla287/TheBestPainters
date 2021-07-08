@@ -36,7 +36,7 @@ namespace TheBestPainters.Data
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<Crew> Crews { get; set; }
-        public DbSet<IEmployee> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
