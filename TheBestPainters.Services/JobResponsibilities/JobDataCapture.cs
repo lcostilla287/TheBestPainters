@@ -21,7 +21,7 @@ namespace TheBestPainters.Services.JobResponsibilities
             entity.ScopeOfWork = model.ScopeOfWork;
             entity.Interior = model.Interior;
             entity.Exterior = model.Exterior;
-            entity.Id = model.CustomerId;
+            entity.CustomerId = model.CustomerId;
             entity.Price = model.Price;
             entity.CrewId = model.CrewId;
 

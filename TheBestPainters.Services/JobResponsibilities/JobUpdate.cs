@@ -13,7 +13,7 @@ namespace TheBestPainters.Services.JobResponsibilities
         public static void Update(JobEdit model, Job entity)
         {
             entity.JobLocation = model.JobLocation;
-            entity.Id = model.CustomerId;
+            entity.CustomerId = model.CustomerId;
             entity.CrewId = model.CrewId;
             entity.ScopeOfWork = model.ScopeOfWork;
             entity.Interior = model.Interior;

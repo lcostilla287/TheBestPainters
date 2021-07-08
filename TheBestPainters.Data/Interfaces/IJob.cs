@@ -10,7 +10,7 @@ namespace TheBestPainters.Data.Interfaces
     {
         int JobId { get; set; }
 
-        int? Id { get; set; }
+        int? CustomerId { get; set; }
         Customer Customer { get; set; }
 
         int? CrewId { get; set; }

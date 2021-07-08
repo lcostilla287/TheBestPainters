@@ -21,7 +21,7 @@ namespace TheBestPainters.Services.JobResponsibilities
                             new JobListItem
                             {
                                 JobId = e.JobId,
-                                CustomerId = e.Id,
+                                CustomerId = e.CustomerId,
                                 CrewId = e.CrewId,
                                 JobLocation = e.JobLocation,
                                 Interior = e.Interior,

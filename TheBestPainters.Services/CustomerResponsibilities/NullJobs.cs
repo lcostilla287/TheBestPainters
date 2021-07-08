@@ -13,7 +13,7 @@ namespace TheBestPainters.Services.CustomerResponsibilities
         {
             foreach (var job in entity.Jobs)
             {
-                job.Id = null;
+                job.CustomerId = null;
             }
         }
     }

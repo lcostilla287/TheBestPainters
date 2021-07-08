@@ -14,7 +14,7 @@ namespace TheBestPainters.Services.JobResponsibilities
             var job = InstantiateModels.JobDetail();
 
             job.JobId = entity.JobId;
-            job.CustomerId = entity.Id;
+            job.CustomerId = entity.CustomerId;
             job.CrewId = entity.CrewId;
             job.ScopeOfWork = entity.ScopeOfWork;
             job.JobLocation = entity.JobLocation;
