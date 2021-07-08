@@ -13,11 +13,10 @@ namespace TheBestPainters.Controllers.CrewResponsibilities
         public static ICrewEdit EditView(CrewDetail detail)
         {
             var model = InstantiateModels.CrewEdit();
-            //new CrewEdit
-            //{
+
             model.CrewId = detail.CrewId;
             model.CrewName = detail.CrewName;
-                //};
+
             return model;
         }
     }

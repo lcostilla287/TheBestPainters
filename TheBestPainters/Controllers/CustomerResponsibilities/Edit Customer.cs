@@ -13,8 +13,7 @@ namespace TheBestPainters.Controllers.CustomerResponsibilities
         public static ICustomerEdit EditView(CustomerDetail detail)
         {
             var model = InstantiateModels.CustomerEdit();
-            //new CustomerEdit
-            //{
+
             model.CustomerId = detail.CustomerId;
             model.FirstName = detail.FirstName;
             model.LastName = detail.LastName;
@@ -22,7 +21,7 @@ namespace TheBestPainters.Controllers.CustomerResponsibilities
             model.StreetAddress = detail.StreetAddress;
             model.CityAddress = detail.CityAddress;
             model.Email = detail.Email;
-            //};
+
             return model;
         }
     }
