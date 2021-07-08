@@ -24,7 +24,7 @@ namespace TheBestPainters.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Materials.Add(entity);
+                ctx.Materials.Add((Material)entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -45,7 +45,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindMaterial.GetMaterial(ctx, id, _userId);
 
-                return ReturnMaterialData.MaterialData(entity);
+                return (MaterialDetail)ReturnMaterialData.MaterialData(entity);
             }
         }
 
