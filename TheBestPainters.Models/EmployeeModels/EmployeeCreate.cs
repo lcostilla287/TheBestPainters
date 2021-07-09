@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using TheBestPainters.Models.EmployeeInterfaces;
 
 namespace TheBestPainters.Models.EmployeeModels
@@ -28,5 +29,6 @@ namespace TheBestPainters.Models.EmployeeModels
 
         public string Email { get; set; }
         public bool IsCrewChief { get; set; }
+        public SelectList Crews { get; set; }
     }
 }
