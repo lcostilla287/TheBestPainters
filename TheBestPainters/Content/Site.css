@@ -1,13 +1,17 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
+}*/
+html, body {
+    height: 100%;
+    width: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -21,4 +25,51 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.jumbotron {
+    background-image: url(https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1016&q=80);
+    background-repeat:no-repeat;
+    backface-visibility:visible;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    background-position:top right;
+    background-size: 100%;
+}
+
+/*.jumbotron background-image {
+    height: 100%;
+    width: 100%;
+}*/
+body {
+    background-image: url(https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1016&q=80);
+    
+    background-position:top right;
+    background-size:100%;
+}
+
+.display {
+    position:center;
+}
+.card {
+    border-radius: 0px 100px 100px 0px;
+    margin-top: 200px;
+    margin-bottom: 60px;
+    background-image: url(https://resources.workable.com/wp-content/uploads/2016/01/painter-jd-1.jpg);
+    background-position: center;
+    background-size:150%;
+    background-repeat: no-repeat;
+    background-color: #e6e6e6;
+}
+.card-title {
+    color: black;
+}
+.card-text {
+    color: black;
+}
+
+footer{
+    background-color:antiquewhite;
+    margin-top: 50px;
 }
