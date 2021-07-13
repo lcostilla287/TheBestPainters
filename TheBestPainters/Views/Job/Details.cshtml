@@ -3,110 +3,114 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container-fluid display back margin-top">
+    <h2>Job Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.JobId)
+            </dt>
 
-<div>
-    <h4>JobDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.JobId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CustomerId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CrewId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CrewId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CrewId)
+                @Html.ActionLink("View Crew Details", "Details", "Crew", new { id = Model.CrewId }, null)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CrewId)
-            @Html.ActionLink("View Crew Details", "Details", "Crew", new {id = Model.CrewId}, null)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.JobLocation)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobLocation)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobLocation)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobLocation)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ScopeOfWork)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ScopeOfWork)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ScopeOfWork)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ScopeOfWork)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Interior)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Interior)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Interior)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Interior)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Exterior)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Exterior)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Exterior)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Exterior)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
-    <hr/>
-    @foreach (var item in Model.Materials)
+        </dl>
+        <hr />
+        @if(Model.Materials.Count > 0)
             {
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(modelItem => item.MaterialId)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelItem => item.MaterialId)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(modelItem => item.MaterialName)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelItem => item.MaterialName)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(modelItem => item.Quantity)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                    </dd>
-                </dl>
-                <p>
-                    @Html.ActionLink("View Material Details", "Details", "Material", new {id = item.MaterialId}, null)
-                </p>
+                <h3>Materials</h3>
+        foreach (var item in Model.Materials)
+        {
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(modelItem => item.MaterialId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.MaterialId)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(modelItem => item.MaterialName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.MaterialName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(modelItem => item.Quantity)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </dd>
+            </dl>
+            <p>
+                @Html.ActionLink("View Material Details", "Details", "Material", new { id = item.MaterialId }, null)
+            </p>
+        }
             }
+    </div>
+    <hr />
+    <p>
+        <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }, new { @class = "btn btn-primary btn-large" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+    </p>
 </div>
-<hr/>
-<p>
-    <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

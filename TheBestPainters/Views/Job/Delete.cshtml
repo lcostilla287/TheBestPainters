@@ -3,86 +3,87 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="container-fluid display back margin-top">
+    <h2>Delete</h2>
 
-<h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.JobId)
+            </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>JobDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.JobId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CustomerId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CrewId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CrewId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CrewId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CrewId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.JobLocation)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobLocation)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobLocation)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobLocation)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ScopeOfWork)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ScopeOfWork)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ScopeOfWork)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ScopeOfWork)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Interior)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Interior)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Interior)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Interior)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Exterior)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Exterior)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Exterior)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Exterior)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+        </dl>
 
-    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+            </div>
+        }
+    </div>
 </div>
