@@ -24,6 +24,7 @@ namespace TheBestPainters.Services.EmployeeResponsibilities
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 CrewId = e.CrewId,
+                                PhoneNumber = e.PhoneNumber,
                                 IsCrewChief = e.IsCrewChief
                             }
                         );
