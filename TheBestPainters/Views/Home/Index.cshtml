@@ -5,13 +5,14 @@
 <div class="container-fluid">
     <div class="row jumbotron text-center">
         <div class="col-12">
-            <h1>The Best Painters</h1>
             @if (!User.Identity.IsAuthenticated)
             {
+            <h1>The Best Painters</h1>
                 <p class="lead">Look for the Rest, We'll Handle the Rest</p>
             }
             @if (User.Identity.IsAuthenticated)
             {
+            <h1 class="padding-top">The Best Painters</h1>
                 <p class="lead">Welcome Admin! What would you like to do?</p>
             }
         </div>
