@@ -3,22 +3,27 @@
     ViewBag.Message = "Get your free quote today!";
 }
 <h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    333 Painting Court<br />
-    Somewhere, IN 00000<br />
-    <abbr title="Phone">P:</abbr>
-    000.000.0000
-</address>
+<div class="justify">
+    <div class="container-fluid text-center back">
+        <h3>@ViewBag.Message</h3>
+        <address>
+            333 Painting Court<br />
+            Somewhere, IN 00000<br />
+            <abbr title="Phone">P:</abbr>
+            000.000.0000
+        </address>
 
-<address>
-    <strong>Free Quote:</strong>   <a href="mailto:Painting@example.com">Painting@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
-
-<h3>Questions? Comments? Concerns?</h3>
-<p>Contact our support for all of your needs</p>
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a>
-</address>
+        <address>
+            <strong>Free Quote:</strong>   <a href="mailto:Painting@example.com">Painting@example.com</a><br />
+        </address>
+    </div>
+    <hr class="dark" />
+    <div class="container-fluid text-center back">
+        <h3>Questions? Comments? Concerns?</h3>
+        <p>Contact our support for all of your needs</p>
+        <address>
+            <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a>
+        </address>
+    </div>
+</div>

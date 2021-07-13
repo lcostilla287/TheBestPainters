@@ -1,17 +1,20 @@
-﻿/*body {
+﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-}*/
+}
 html, body {
     height: 100%;
     width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
-/* Set padding to keep content from hitting the edges */
-/*.body-content {
+/* Set padding to keep content from hitting the edges*/ 
+.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}*/
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -38,10 +41,10 @@ textarea {
     background-size: 100%;
 }
 
-/*.jumbotron background-image {
+.jumbotron background-image {
     height: 100%;
     width: 100%;
-}*/
+}
 body {
     background-image: url(https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1016&q=80);
     
@@ -73,4 +76,16 @@ body {
 footer{
     background-color:antiquewhite;
     margin-top: 50px;
+}
+.justify {
+    padding-top: 2em;
+    height: 43.5%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBC59IToxrXKc0uc8TXE0Zl4XO_-hIKADQg&usqp=CAU);
+    margin-top: 100px;
+}
+.back {
+    width: 75%;
+    background-color:aliceblue;
+    border-style: solid;
+    border-radius: 10px;
 }
