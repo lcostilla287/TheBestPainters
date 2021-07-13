@@ -7,12 +7,12 @@
         <div class="col-12">
             @if (!User.Identity.IsAuthenticated)
             {
-            <h1>The Best Painters</h1>
+                <h1>The Best Painters</h1>
                 <p class="lead">Look for the Rest, We'll Handle the Rest</p>
             }
             @if (User.Identity.IsAuthenticated)
             {
-            <h1 class="padding-top">The Best Painters</h1>
+                <h1 class="padding-top">The Best Painters</h1>
                 <p class="lead">Welcome Admin! What would you like to do?</p>
             }
         </div>
@@ -22,35 +22,49 @@
 <div class="row">
     @if (User.Identity.IsAuthenticated)
     {
-        <div class="col-md-4">
-            <h2>Access your Customers</h2>
-            <p>
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Access Your Jobs</h2>
-            <p>
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Access Your Crews</h2>
-            <p>
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Materials</h2>
-            <p>
-            </p>
-            <p><a class="btn btn-default">Click &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Manage Employees</h2>
-            <p>
-            </p>
-            <p><a class="btn btn-default">Click &raquo;</a></p>
+        <div class="container-fluid display">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h2>Access your Customers</h2>
+                    <p>
+                    </p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+
+                    <h2>Access Your Jobs</h2>
+                    <p>
+                    </p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <h2>Access Your Crews</h2>
+                    <p>
+                    </p>
+                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <h2>Materials</h2>
+                    <p>
+                    </p>
+                    <p><a class="btn btn-default">Click &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <h2>Manage Employees</h2>
+                    <p>
+                    </p>
+                    <p><a class="btn btn-default">Click &raquo;</a></p>
+                </div>
+            </div>
         </div>
     }
     @if (!User.Identity.IsAuthenticated)
@@ -63,7 +77,7 @@
                         <p class="card-text">
                             Need something painted? Have any questions? Click below to contact the best service!
                         </p>
-                        <p>@Html.ActionLink("Contact Us", "Contact",null, new { @class = "btn btn-primary btn-large"})</p>
+                        <p>@Html.ActionLink("Contact Us", "Contact", null, new { @class = "btn btn-primary btn-large" })</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +88,7 @@
                         <p class="card-text">
                             Who exactly are we? Click below to check us out!
                         </p>
-                        <p>@Html.ActionLink("Learn More About Us", "About",null, new { @class = "btn btn-primary btn-large" })</p>
+                        <p>@Html.ActionLink("Learn More About Us", "About", null, new { @class = "btn btn-primary btn-large" })</p>
                     </div>
                 </div>
             </div>
