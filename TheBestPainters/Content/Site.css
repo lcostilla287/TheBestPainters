@@ -53,7 +53,8 @@ body {
     position:center;
 }
 .card {
-    border-radius: 0px 100px 100px 0px;
+    text-align: center;
+    border-radius: 100px;
     margin-top: 200px;
     margin-bottom: 60px;
     background-image: url(https://resources.workable.com/wp-content/uploads/2016/01/painter-jd-1.jpg);
