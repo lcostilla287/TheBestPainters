@@ -5,13 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TheBestPainters.Controllers.EmployeeResponsibilities;
+using TheBestPainters.Data;
 using TheBestPainters.Models.EmployeeModels;
 using TheBestPainters.Services;
+using TheBestPainters.Services.Instantiate;
 
 namespace TheBestPainters.Controllers
 {
     public class EmployeeController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Employee
         public ActionResult Index()
         {
@@ -22,7 +25,11 @@ namespace TheBestPainters.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var model = InstantiateModels.EmployeeCreate();
+            var crews = _db.Crews.ToArray();
+            model.Crews = new SelectList(crews, "CrewId", "CrewName");
+
+            return View(model);
         }
 
         [HttpPost]

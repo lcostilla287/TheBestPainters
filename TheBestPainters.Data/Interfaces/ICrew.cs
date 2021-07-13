@@ -10,6 +10,6 @@ namespace TheBestPainters.Data.Interfaces
     {
         string CrewName { get; set; }
         List<Job> Jobs { get; set; }
-        List<IEmployee> Employees { get; set; }
+        List<Employee> Employees { get; set; }
     }
 }

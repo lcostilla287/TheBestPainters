@@ -3,66 +3,67 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container-fluid display back margin-top">
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>MaterialDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MaterialId)
+            </dt>
 
-<div>
-    <h4>MaterialDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MaterialId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MaterialId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaterialId)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.JobId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobId)
+                @Html.ActionLink("View Job Details", "Details", "Job", new { id = Model.JobId }, null)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobId)
-            @Html.ActionLink("View Job Details", "Details", "Job", new {id = Model.JobId}, null)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MaterialName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MaterialName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MaterialName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaterialName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalPrice)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TotalPrice)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialId }, new { @class = "btn btn-primary btn-large" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+    </p>
 </div>
-<p>
-    <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

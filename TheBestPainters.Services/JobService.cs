@@ -53,6 +53,7 @@ namespace TheBestPainters.Services
             {
                 var entity = FindJob.GetJob(ctx, model.JobId, _userId);
 
+                JobUpdate.Update(model, entity);
                 return ctx.SaveChanges() == 1;
             }
         }
