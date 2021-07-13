@@ -13,7 +13,7 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <h1 class="padding-top">The Best Painters</h1>
-                <p class="lead">Welcome Admin! What would you like to do?</p>
+                <p class="lead light">Welcome Admin! What would you like to do?</p>
             }
         </div>
     </div>
@@ -27,42 +27,31 @@
             <div class="col-md-6">
                 <div class="card">
                     <h2>Access your Customers</h2>
-                    <p>
-                    </p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                    <p>@Html.ActionLink("Customers", "Index", "Customer", null, new { @class = "btn btn-primary btn-large" })</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
-
                     <h2>Access Your Jobs</h2>
-                    <p>
-                    </p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+                    <p>@Html.ActionLink("Jobs", "Index", "Job", null, new { @class = "btn btn-primary btn-large" })</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <h2>Access Your Crews</h2>
-                    <p>
-                    </p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                    <p>@Html.ActionLink("Crews", "Index", "Crew", null, new { @class = "btn btn-primary btn-large" })</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <h2>Materials</h2>
-                    <p>
-                    </p>
-                    <p><a class="btn btn-default">Click &raquo;</a></p>
+                    <p>@Html.ActionLink("Materials", "Index", "Material", null, new { @class = "btn btn-primary btn-large" })</p>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="card">
                     <h2>Manage Employees</h2>
-                    <p>
-                    </p>
-                    <p><a class="btn btn-default">Click &raquo;</a></p>
+                    <p>@Html.ActionLink("Employees", "Index","Employee", null, new { @class = "btn btn-primary btn-large" })</p>
                 </div>
             </div>
         </div>

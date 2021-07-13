@@ -102,5 +102,24 @@ footer{
 }
 
 .padding-top {
-    padding-top: 100px;
+    padding-top: 75px;
+}
+
+.light {
+    color:aliceblue;
+}
+.margin-top {
+    margin-top: 100px;
+}
+.margin-left {
+    margin-left: 20px
+}
+.padding-bot {
+    padding-bottom: 20px;
+}
+.small-padding-top {
+    padding-top: 20px;
+}
+.padding-left {
+    padding-left: 20px;
 }
