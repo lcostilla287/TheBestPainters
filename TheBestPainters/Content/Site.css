@@ -47,19 +47,22 @@ textarea {
 }
 body {
     background-image: url(https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1016&q=80);
-    
+    /*background-repeat:no-repeat;*/
     background-position:top right;
     background-size:100%;
+    background-color: aliceblue;
 }
-
+body background-image {
+}
 .display {
     position:center;
 }
 .card {
+    border-style:solid;
     text-align: center;
     border-radius: 100px;
-    margin-top: 200px;
-    margin-bottom: 60px;
+    margin-top: 170px;
+    margin-bottom: 55px;
     background-image: url(https://resources.workable.com/wp-content/uploads/2016/01/painter-jd-1.jpg);
     background-position: center;
     background-size:150%;
@@ -88,4 +91,12 @@ footer{
     background-color:aliceblue;
     border-style: solid;
     border-radius: 10px;
+}
+.back img{
+    max-width:100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.navbar-fixed-top {
+    background-color:black;
 }
