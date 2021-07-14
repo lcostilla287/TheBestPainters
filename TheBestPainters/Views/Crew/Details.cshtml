@@ -1,0 +1,86 @@
+﻿@model TheBestPainters.Models.CrewModels.CrewDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container-fluid display back margin-top">
+    <h2>Crew Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CrewId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CrewId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CrewName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CrewName)
+            </dd>
+
+        </dl>
+        <hr />
+        @if (Model.Employees.Count > 0)
+        {
+            <h3>Employees</h3>
+            foreach (var e in Model.Employees)
+            {
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => e.EmployeeId)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => e.EmployeeId)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(modelItem => e.FullName)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(modelItem => e.FullName)
+                    </dd>
+
+                </dl>
+                <p>
+                    @Html.ActionLink("View Employee Details", "Details", "Employee", new { id = e.EmployeeId }, null)
+                </p>
+            }
+        }
+    </div>
+    @if (Model.Jobs.Count > 0)
+    {
+        <h3>Jobs</h3>
+        foreach (var item in Model.Jobs)
+        {
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(modelItem => item.JobId)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.JobId)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(modelItem => item.JobLocation)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.JobLocation)
+                </dd>
+            </dl>
+            <p>
+                @Html.ActionLink("View Job Details", "Details", "Job", new { id = item.JobId }, null)
+            </p>
+        }
+    }
+    <hr />
+    <p>
+        <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CrewId }, new {@class = "btn btn-primary btn-large" }) |
+        @Html.ActionLink("Back to List", "Index", null, new {@class = "btn btn-primary btn-large" })
+    </p>
+</div>

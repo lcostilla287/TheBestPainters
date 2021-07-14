@@ -43,9 +43,24 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +69,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrewResponsibilities\CrewDataCapture.cs" />
+    <Compile Include="CrewResponsibilities\CrewQuery.cs" />
+    <Compile Include="CrewResponsibilities\CrewUpdate.cs" />
+    <Compile Include="CrewResponsibilities\FindCrew.cs" />
+    <Compile Include="CrewResponsibilities\NullEmployees.cs" />
+    <Compile Include="CrewResponsibilities\NullJobs.cs" />
+    <Compile Include="CrewResponsibilities\ReturnCrewData.cs" />
+    <Compile Include="CrewService.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerDataCapture.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerQuery.cs" />
+    <Compile Include="CustomerResponsibilities\FindCustomer.cs" />
+    <Compile Include="CustomerResponsibilities\NullJobs.cs" />
+    <Compile Include="CustomerResponsibilities\ReturnCustomerData.cs" />
+    <Compile Include="CustomerResponsibilities\CustomerUpdate.cs" />
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeData.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeDataCapture.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeQuery.cs" />
+    <Compile Include="EmployeeResponsibilities\EmployeeUpdate.cs" />
+    <Compile Include="EmployeeResponsibilities\FindEmployee.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="ICrewService.cs" />
+    <Compile Include="ICustomerService.cs" />
+    <Compile Include="IEmployeeService.cs" />
+    <Compile Include="IJobService.cs" />
+    <Compile Include="IMaterialService.cs" />
+    <Compile Include="Instantiate\InstantiateModels.cs" />
+    <Compile Include="JobResponsibilities\FindJob.cs" />
+    <Compile Include="JobResponsibilities\JobDataCapture.cs" />
+    <Compile Include="JobResponsibilities\JobQuery.cs" />
+    <Compile Include="JobResponsibilities\JobUpdate.cs" />
+    <Compile Include="JobResponsibilities\NullMaterials.cs" />
+    <Compile Include="JobResponsibilities\ReturnJobData.cs" />
+    <Compile Include="JobService.cs" />
+    <Compile Include="MaterialResponsibilities\FindMaterial.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialDataCapture.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialQuery.cs" />
+    <Compile Include="MaterialResponsibilities\MaterialUpdate.cs" />
+    <Compile Include="MaterialResponsibilities\ReturnMaterialData.cs" />
+    <Compile Include="MaterialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheBestPainters.Data\TheBestPainters.Data.csproj">
+      <Project>{ca7c0d43-3f54-499a-a54f-48f996675ba2}</Project>
+      <Name>TheBestPainters.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheBestPainters.Models\TheBestPainters.Models.csproj">
+      <Project>{f0d066d0-cb5b-470a-aa19-2135fa24cd4e}</Project>
+      <Name>TheBestPainters.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

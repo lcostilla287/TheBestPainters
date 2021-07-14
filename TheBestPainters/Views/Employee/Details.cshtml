@@ -1,0 +1,92 @@
+﻿@model TheBestPainters.Models.EmployeeModels.EmployeeDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container-fluid display back margin-top">
+    <h2>Employee Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmployeeId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CrewId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CrewId)
+                @Html.ActionLink("View Crew Details", "Details", "Crew", new { id = Model.CrewId }, null)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StreetAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StreetAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CityAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CityAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsCrewChief)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsCrewChief)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <a href="##" onclick="history.go(-1); return false;">Back to Previous Page</a> |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }, new {@class = "btn btn-primary btn-large" }) |
+        @Html.ActionLink("Back to List", "Index", null, new {@class = "btn btn-primary btn-large" })
+    </p>
+</div>
